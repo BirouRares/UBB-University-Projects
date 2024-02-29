@@ -1,0 +1,74 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  
+     4                                  global start        
+     5                                  
+     6                                  
+     7                                  extern exit               
+     8                                  import exit msvcrt.dll    
+     9                                                           
+    10                                  
+    11                                  
+    12                                  segment data use32 class=data
+    13                                      ;a,b-word; c,d-byte; e-doubleword; x-qword
+    14 00000000 0200                        a dw 2
+    15 00000002 0A00                        b dw 10
+    16 00000004 0A                          c db 10
+    17 00000005 04                          d db 4
+    18 00000006 96000000                    e dd 150
+    19 0000000A 3601000000000000            x dq 310
+    20                                  
+    21                                  segment code use32 class=code
+    22                                      start:
+    23                                          ;1/a + 200*b -c / (d+1) + x / a - e
+    24                                          ;signed
+    25                                          
+    26                                          ;1/a
+    27 00000000 66B80100                        mov AX, 1  ;AX=1
+    28 00000004 6699                            cwd ; AX=DX:AX=1
+    29 00000006 66F73D[00000000]                idiv word[a]  ; AX=1/a=0    DX=1%a=1
+    30 0000000D 66BA0000                        mov DX, 0  ; DX=0
+    31 00000011 6689C3                          mov BX,AX ;BX=AX=0
+    32                                          
+    33                                          ;200*b
+    34 00000014 66BAC800                        mov DX,200 ;DX=200
+    35 00000018 66A1[02000000]                  mov AX, [b] ;AX=b=10
+    36 0000001E 66F7EA                          imul DX ;AX=2000  
+    37                                          
+    38                                          ;1/a + 200*b
+    39 00000021 6611C3                          adc BX,AX ;BX=2000
+    40                                          
+    41                                          ;c / (d+1)
+    42 00000024 A0[04000000]                    mov AL, [c] ;AL=10
+    43 00000029 6698                            cbw ; AX=10
+    44 0000002B 8A0D[05000000]                  mov CL, [d] ; CL=4
+    45 00000031 80D101                          adc CL, 1; CL=5
+    46 00000034 F6F9                            idiv CL ;AL=c/(d+1) =2  AH=c % (d+1)=0
+    47                                          
+    48                                          ;1/a + 200*b -c / (d+1)
+    49 00000036 6698                            cbw ;AX=2
+    50 00000038 6619C3                          sbb BX, AX ;BX=1998
+    51                                          
+    52                                          ;x / a
+    53 0000003B 66A1[00000000]                  mov AX, [a] ;AX=2
+    54 00000041 98                              cwde ;DX:AX=2
+    55 00000042 6652                            push DX
+    56 00000044 6650                            push AX
+    57 00000046 59                              pop ECX ;ECX=2
+    58                                          
+    59 00000047 A1[0A000000]                    mov EAX, dword [x] 
+    60 0000004C 8B15[0E000000]                  mov EDX, dword [x+4]; EDX:EAX=x=310
+    61                                          
+    62 00000052 F7F9                            idiv ECX ; EAX=EDX:EAX/ECX=155  EDX=EDX:EAX%ECX=0
+    63                                          
+    64                                          ;1/a + 200*b -c / (d+1) + x / a
+    65 00000054 89C1                            mov ECX,EAX  ;ECX=EAX=155
+    66 00000056 6689D8                          mov AX, BX ;AX=BX=1998
+    67 00000059 98                              cwde ;EAX=1998
+    68 0000005A 11C8                            adc EAX,ECX  ; EAX=EAX+ECX=1998+155=2153
+    69                                          
+    70                                          ;1/a + 200*b -c / (d+1) + x / a - e
+    71 0000005C 1B05[06000000]                  sbb EAX, [e] ;EAX=2153-150=2003
+    72                                          
+    73 00000062 6A00                            push    dword 0     
+    74 00000064 FF15[00000000]                  call    [exit]     

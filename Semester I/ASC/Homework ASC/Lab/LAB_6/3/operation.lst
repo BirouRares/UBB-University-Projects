@@ -1,0 +1,39 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  
+     6                                  ; declare external functions needed by our program
+     7                                  extern exit               ; tell nasm that exit exists even if we won't be defining it
+     8                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+     9                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    10                                  
+    11                                  ; our data is declared here (the variables needed by our program)
+    12                                  segment data use32 class=data
+    13 00000000 01020304050607              s1 db 1,2,3,4,5,6,7
+    14                                      lens1 equ $-s1
+    15 00000007 0000<rept>                  s2 times lens1 dw 0  ; add digit 7 at each number in s1
+    16 00000015 02                          two db 2
+    17 00000016 00                          sum db 0
+    18 00000017 0A                          ten db 10
+    19                                      
+    20                                  segment code use32 class=code
+    21                                      start:
+    22                                          ;construct s2 by adding digit 7 at the end of each element in s1
+    23 00000000 B907000000                      mov ECX, lens1
+    24 00000005 BE00000000                      mov ESI, 0
+    25 0000000A BF00000000                      mov EDI, 0
+    26 0000000F E31C                            jecxz ends2l
+    27                                          s2loop:
+    28 00000011 8A86[00000000]                      mov AL, [s1+ESI]
+    29 00000017 F625[17000000]                      mul byte [ten] ; AX=AL*10
+    30 0000001D 6683C007                            add AX,7 ; AX=AL*10+7
+    31 00000021 668987[07000000]                    mov [s2+EDI], AX
+    32 00000028 46                                  inc ESI
+    33 00000029 47                                  inc EDI
+    34 0000002A 47                                  inc EDI  ; as s2 in a dword
+    35 0000002B E2E4                            loop s2loop
+    36                                          ends2l:
+    37                                          
+    38 0000002D 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    39 0000002F FF15[00000000]                  call    [exit]       ; call exit to terminate the program

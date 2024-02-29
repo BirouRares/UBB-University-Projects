@@ -1,0 +1,49 @@
+     1                                  bits 32 
+     2                                  
+     3                                  global start        
+     4                                  
+     5                                  extern exit, fopen, fread, fclose, printf
+     6                                  import exit msvcrt.dll
+     7                                  import fopen msvcrt.dll
+     8                                  import fread msvcrt.dll
+     9                                  import fclose msvcrt.dll
+    10                                  import printf msvcrt.dll   
+    11                                                            
+    12                                  segment data use32 class=data
+    13 00000000 66696C652E74787400          file_name db "file.txt", 0   ; filename to be read
+    14 00000009 7200                        access_mode db "r", 0 
+    15 0000000B FFFFFFFF                    file_descriptor dd -1
+    16                                      len equ 100 
+    17 0000000F 00<rept>                    text times (len+1) db 0 
+    18 00000074 25642000                    formatcif db "%d ", 0
+    19                                      
+    20                                      
+    21                                  segment code use32 class=code
+    22                                      start:
+    23                                      
+    24 00000000 68[09000000]                    push dword access_mode     
+    25 00000005 68[00000000]                    push dword file_name
+    26 0000000A FF15[00000000]                  call [fopen]
+    27 00000010 83C408                          add esp, 4*2       ; clean-up the stack
+    28 00000013 A3[0B000000]                    mov [file_descriptor], eax  ; store the file descriptor returned by fopen
+    29                                          
+    30 00000018 83F800                          cmp eax, 0
+    31 0000001B 7427                            je final
+    32                                          
+    33 0000001D FF35[0B000000]                  push dword [file_descriptor]
+    34 00000023 6A64                            push dword len
+    35 00000025 6A01                            push dword 1
+    36 00000027 68[0F000000]                    push dword text        
+    37 0000002C FF15[00000000]                  call [fread]
+    38 00000032 83C410                          add esp, 4*4
+    39                                          
+    40                                          
+    41                                          
+    42                                          
+    43 00000035 FF35[0B000000]                  push dword [file_descriptor]
+    44 0000003B FF15[00000000]                  call [fclose]
+    45 00000041 83C404                          add esp, 4
+    46                                          
+    47                                          final:
+    48 00000044 6A00                            push    dword 0      
+    49 00000046 FF15[00000000]                  call    [exit]       

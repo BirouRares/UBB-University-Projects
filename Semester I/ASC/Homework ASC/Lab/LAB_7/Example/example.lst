@@ -1,0 +1,39 @@
+     1                                  bits 32 
+     2                                  
+     3                                  global start        
+     4                                  
+     5                                  
+     6                                  extern exit               
+     7                                  import exit msvcrt.dll    
+     8                                  
+     9                                  segment data use32 class=data
+    10 00000000 B0BC0A1110311200D2-         sir  dq  123110110abcb0h,1116adcb5a051ad2h,4120ca11d730cbb0h
+    10 00000009 1A055ACBAD1611B0CB-
+    10 00000012 30D711CA2041       
+    11                                      ;b0 bc 0a 11 10 31 12 00
+    12                                  	len equ ($-sir)/8;the length of the string (in quadwords)
+    13 00000018 08                      	opt db 8;variabile used for testing divisibility to 8
+    14 00000019 0A000000                	zece dd 10;variabile used for determining the digits in base 10 of a number by successive divisions to 10
+    15 0000001D 00000000                	suma dd  0;variabile used for holding the sum of the digits 
+    16                                  
+    17                                  
+    18                                  segment code use32 class=code
+    19                                      start:
+    20 00000000 BE[00000000]                    mov esi,sir
+    21 00000005 B300                            mov BL, 0
+    22 00000007 B903000000                      mov ECX, len
+    23                                          myloop:
+    24 0000000C AD                                  lodsd  ;EAX= first dw from sir  and increment ESI with 4
+    25 0000000D 66AD                                lodsw  ; AX= word and esi+2
+    26 0000000F 66AD                                lodsw  ; AX=high word
+    27                                                 ;AL
+    28 00000011 B400                                mov AH,0
+    29 00000013 F635[18000000]                      div byte [opt]
+    30                                                 ;check remainder AH
+    31 00000019 80FC00                              cmp AH,0  ;if remainder is 0
+    32 0000001C 7502                                jne dontinc
+    33 0000001E FEC3                                    inc BL
+    34                                              dontinc:
+    35 00000020 E2EA                            loop myloop
+    36 00000022 6A00                            push    dword 0     
+    37 00000024 FF15[00000000]                  call    [exit]      

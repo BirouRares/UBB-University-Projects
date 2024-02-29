@@ -1,0 +1,40 @@
+     1                                  ;A character string S is given. Obtain the string D that contains all capital letters of the string S
+     2                                  bits 32 
+     3                                  
+     4                                  global start        
+     5                                  
+     6                                  extern exit, printf               
+     7                                  import exit msvcrt.dll    
+     8                                  import printf msvcrt.dll
+     9                                                            
+    10                                  
+    11                                  segment data use32 class=data
+    12 00000000 614162423225784D            s db 'a', 'A', 'b', 'B', '2', '%', 'x', 'M'
+    13                                      l equ $-s
+    14 00000008 00<rept>                    d times l db 0
+    15                                      
+    16                                  segment code use32 class=code
+    17                                      start:
+    18                                          ;A character string S is given. Obtain the string D that contains all capital letters of the string S
+    19 00000000 B908000000                      mov ECX, l
+    20 00000005 BEFFFFFFFF                      mov ESI,-1
+    21 0000000A BF00000000                      mov EDI,0
+    22 0000000F E318                            jecxz endloop  ; if ECX=0
+    23                                          repeta:
+    24 00000011 46                                  inc ESI  ;ESI++
+    25 00000012 8A86[00000000]                      mov AL, [s+ESI]  ; AL=s[ESI]
+    26 00000018 3C41                                cmp AL, "A"  ; compare character and "A"
+    27 0000001A 720B                                JB notcapitala  ;jump to notcapitala if input<A
+    28 0000001C 3C5A                                cmp AL, "Z"   ; compare character and "Z"
+    29 0000001E 7707                                JA notcapitalz  ; jump to notcapitalz if input>Z
+    30 00000020 8887[08000000]                      mov [d+EDI],AL  ; if AL is a capital letter we add it to d
+    31 00000026 47                                  inc EDI  ; EDI++
+    32                                  
+    33                                              notcapitala:
+    34                                              notcapitalz:
+    35                                              ;inc ESI
+    36 00000027 E2E8                            loop repeta
+    37                                          endloop: ; the loop ends and we have the capital letters stored in d
+    38 00000029 66B81A00                        mov AX, 01Ah
+    39 0000002D 6A00                            push    dword 0      
+    40 0000002F FF15[00000000]                  call    [exit]       

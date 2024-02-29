@@ -1,0 +1,55 @@
+     1                                  ;A list of doublewords is given. Obtain the list made out of the low bytes of the high words of each doubleword from the given list with the property that these bytes are palindromes in base 10
+     2                                  
+     3                                  bits 32
+     4                                  
+     5                                  global start        
+     6                                  
+     7                                  extern exit              
+     8                                  import exit msvcrt.dll    
+     9                                  
+    10                                  segment data use32 class=data
+    11 00000000 785634124D3C2C1A76-         s dd 12345678h, 1A2C3C4Dh, 98FCDC76h
+    11 00000009 DCFC98             
+    12                                      len equ ($-s)/4
+    13 0000000C 00<rept>                    d times len db 0
+    14 0000000F 00                          aux db 0
+    15 00000010 00000000                    uc dd 0
+    16                                  
+    17                                  segment code use32 class=code
+    18                                      start:
+    19 00000000 B903000000                      mov ECX, len  ; ECX=the lenght of the string
+    20 00000005 BE[00000000]                    mov ESI, s 
+    21 0000000A BF[0C000000]                    mov EDI, d
+    22 0000000F FC                              cld  ;parse the string from left to right(DF=0).
+    23 00000010 E347                            jecxz endloop  ; if ECX=0
+    24                                          myloop:
+    25 00000012 AD                                  lodsd ;EAX=the current doubleword from the string
+    26 00000013 C1E810                              shr EAX, 16  ; we move the word from AX -> AH:AL
+    27 00000016 B400                                mov AH, 0 ;we are interested in the low byte 
+    28 00000018 A2[0F000000]                        mov [aux], AL
+    29 0000001D BB00000000                          mov EBX, 0
+    30 00000022 890D[10000000]                      mov [uc], ECX ; we store the value of ECX, as we need this register
+    31 00000028 66BB0A00                            mov BX,10
+    32 0000002C 66B90000                            mov CX,0
+    33                                              reverting:
+    34 00000030 6691                                    xchg AX,CX
+    35 00000032 66F7E3                                  mul BX;  AX = "10*B"  DX = overflow (typically 0)
+    36                                                  
+    37 00000035 6691                                    xchg AX,CX; Change AX and BX back: BX="10*B"
+    38 00000037 66BA0000                                mov DX,0 ; Prepare DX for "div"
+    39 0000003B 66F7F3                                  div BX ;  AX = "A/10"     DX = "A MOD 10" = "digit"
+    40                                                  
+    41 0000003E 6601D1                                  add CX,DX  ; "B = 10*B+digit"
+    42 00000041 6683F800                                cmp AX,0  ;if we still have digits in AX
+    43 00000045 77E9                                    ja reverting  ; Here CL will contain the "reverted" number, as from the beginning the value was a byte
+    44                                                  
+    45 00000047 A0[0F000000]                        mov AL, [aux]
+    46 0000004C 38C8                                cmp AL,CL
+    47 0000004E 8B0D[10000000]                      mov ECX, [uc]
+    48 00000054 7501                                jne notadd
+    49 00000056 AA                                  stosb;store AL into the byte from the address <ES:EDI> 
+    50                                              notadd: 
+    51 00000057 E2B9                            loop myloop
+    52                                          endloop:
+    53 00000059 6A00                            push    dword 0      
+    54 0000005B FF15[00000000]                  call    [exit]       

@@ -1,0 +1,44 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  
+     6                                  ; declare external functions needed by our program
+     7                                  extern exit               ; tell nasm that exit exists even if we won't be defining it
+     8                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+     9                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    10                                  
+    11                                  ; our data is declared here (the variables needed by our program)
+    12                                  segment data use32 class=data
+    13 00000000 01020304050607              s1 db 1,2,3,4,5,6,7
+    14                                      lens1 equ $-s1
+    15 00000007 02                          two db 2
+    16 00000008 00                          sum db 0
+    17                                      
+    18                                  segment code use32 class=code
+    19                                      start:
+    20                                          ;sum of numbers (bytes) in s1 which are odd
+    21                                          
+    22 00000000 B300                            mov BL, 0
+    23 00000002 B907000000                      mov ECX, lens1  ; number of repetition of the loop
+    24 00000007 BE00000000                      mov ESI,0 ; ESI- index
+    25 0000000C E31E                            jecxz endloop  ; if ECX=0
+    26                                          repeta:
+    27 0000000E 8A86[00000000]                      mov AL,[s1+ESI]  ; AL=s1[ESI]
+    28                                              ; check is element odd?
+    29 00000014 6698                                cbw
+    30 00000016 F635[07000000]                      div byte[two] ; AL=AX/2 AH=AX%2
+    31 0000001C 80FC00                              cmp AH, 0 ; compere
+    32 0000001F 7406                                je donotadd
+    33 00000021 029E[00000000]                          add bl, [s1+esi]
+    34                                              donotadd:
+    35 00000027 00C3                                add BL, AL  ; sum
+    36 00000029 46                                  inc ESI  ;ESI++
+    37                                              
+    38 0000002A E2E2                            loop repeta   ; decrement ECX  ; Jump (jnz) to repete
+    39                                          endloop:
+    40                                          
+    41 0000002C 881D[08000000]                  mov [sum], BL
+    42                                          
+    43 00000032 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    44 00000034 FF15[00000000]                  call    [exit]       ; call exit to terminate the program
