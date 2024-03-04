@@ -1,0 +1,21 @@
+[2023-04-06 08:29:12] [info] Start Program:
+Path:"D:\Quick access files\OOP\Homework\A45\A45\x64\Debug\A45.exe"
+Arguments:
+Working directory: "D:\Quick access files\OOP\Homework\A45\A45\A45\"
+Modules: Selected: D:\Quick access files\OOP\Homework\A45\A45\x64\Debug\A45.exe Excluded: 
+Sources: Selected: D:\Quick access files\OOP\Homework\A45\A45\A45 Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: Binary C:\Users\Birou Rares\AppData\Local\Temp\tuhhfjtc.jbi 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2023-04-06 08:29:12] [info] Module: D:\Quick access files\OOP\Homework\A45\A45\x64\Debug\A45.exe is selected because it matches selected pattern: D:\Quick access files\OOP\Homework\A45\A45\x64\Debug\A45.exe
+[2023-04-06 08:29:12] [info] ----------------------------------------------------
+[2023-04-06 08:29:12] [info] Coverage binary generated in file: C:\Users\Birou Rares\AppData\Local\Temp\tuhhfjtc.jbi
+[2023-04-06 08:29:12] [info] ----------------------------------------------------
