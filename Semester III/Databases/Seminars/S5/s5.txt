@@ -1,0 +1,184 @@
+S5. Indexes(I)
+-are structures stored on disk
+-ass. to tables/views
+-optimize retrival opperations
+
+good indexing => fast app
+poor indexing => slow app
+
+CREATE [UNIQUE][Cluster|NONCLUSTERED]
+    INDEX idxName ON
+    Schema TableName/View
+    (col A [ASCIDESC],clo B,....) -> search key collumms
+    [INCLUDE  (col1,col2,...)]   ->non key collumms
+    [WHERE <CONDITION>]
+    [WITH <op1,op2...>]
+    
+    
+  Characteristics:  cl/noncl.idx
+  
+  -unique/not unique
+  -search key: 1 col + multi cols
+  
+  ncl idx - full tables
+          - fi
+  idx with non key cals
+  cols in the index ASC DESC
+  
+  
+  Clustered:
+  -data rows stored on disk based on the cl idx order
+  
+  create clustered index idxN 
+    ON Table(....)
+  
+  -used for the most executed queries
+  -used for range queries (>< between)
+  -high degree of uniqueness
+  -search key collumms: - should not be frequently changed + as small as possible
+  
+  SQL Server 2022 at most 1 cl.idx
+  search keycals: max 32 cols  900 bytes
+  
+  
+  
+  Non-Clustered:
+  ncl idx order independent from the order in data is stored on the disk
+  create index idxnclN 
+    ON Table(....)
+  
+  
+   SQL Server 2022 at most 999 nl.idx
+   
+   
+   
+   
+EXAMPLES:
+
+
+--1. clustered indexing
+
+SELECT cid,pid
+FROM LettersToStanta
+WHERE letterDate='2023.12.02 19:46:01:350'
+
+CTRL+L
+
+
+--table scan
+
+create clustered index  idx_LTS_date
+ON LettersToStanta(letterDate)
+
+SELECT cid,pid
+FROM LettersToStanta
+WHERE letterDate='2023.12.02 19:46:01:350'
+
+
+-- clu. index seek
+
+SELECT *
+FROM Children
+WHERE cid==9
+  
+  
+  
+-- 2. Non cl index
+SELECT *
+FROM Children
+WHERE age=14
+
+--non-cl index scan
+
+create index  idx_Children
+ON Children(age)
+
+SELECT *
+FROM Children
+WHERE age=14
+  
+  
+CTRL+L
+
+
+
+--3. UNIQUE Indexes
+
+
+SELECT *
+FROM Presents
+WHERE pname='dada'
+
+--cl index scan
+
+create unique index idx_Presents
+ON Presents(pname)
+
+
+SELECT *
+FROM Presents
+WHERE pname='dada'
+
+CTRL+L
+
+--noncl index seek+key lookup
+
+
+
+
+4. multi column indexing
+SELECT cid,pid
+FROM LettersToStanta
+WHERE cid=1400  -cl index scan
+
+
+create index idx_LTS_cid_pid
+ON LettersToStanta(cid,pid)
+
+
+SELECT cid,pid
+FROM LettersToStanta
+WHERE cid=1400  -cl index seek
+
+
+
+
+
+--5.Converting index
+-- in the include you can add columns with a datatype that is not allowed in the search key columns
+
+SELECT *
+FROM Children
+WHERE age=10   -- cl index scan
+
+
+drop index idx_Children_age on Children
+
+
+
+CREATE INDEX idx_Children_age ON
+Children(age)
+INCLUDE (cname)
+
+SELECT *
+FROM Children
+WHERE age=10   -- ncl index seek
+
+
+
+
+
+
+Index Design
+1.Analyze
+2.DB related aspects
+3.Query related aspects
+4.Column related aspects
+
+
+
+
+
+
+
+

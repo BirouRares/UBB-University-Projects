@@ -1,0 +1,234 @@
+			Seminar 4: Functions, Views,System Catalog, Triggers, MERGE   -- in SQL Server
+
+
+
+
+
+
+I.Functions: 
+	-a. scalar
+	-b.inline table- valued
+	-c.multi statement table-valued
+
+a.create function ufNmae(...)
+   RETURNS INT AS begin
+
+
+	return @no
+     end
+    go
+
+Print dbo.ufName(....)
+
+
+
+b. create dbo.ufName(...)
+   returns TABLE AS RETURN
+	select *
+	.....
+   go
+	select * from ufName(...)
+
+
+c. create function ufName(...)
+    return @LogTable TABLE(.....)
+     AS begin 
+	....
+	insert into @LogTable
+	return
+      end
+    go
+
+
+
+
+Examples:
+
+1.
+//Funtion that prints number of hotels that have X starts 
+go
+create fucntion nrOfHotels(@starts DECIMAL(10,2))
+RETURNS INT AS
+	begin
+	DECLARE @nrHotel INT = 0
+	SELECT @nrHotel = COUNT(*) FROM Hotel
+	WHERE stars = @stars 
+	return @nrHotel
+	end
+go
+print dbo.NrOfHotels(5.0)
+
+
+2.
+//Funtion that prints the names of hotels that have X starts 
+
+
+create function hotelNames (@starts DECIMAL(10,2))
+RETURNS tables AS RETURN
+SELECT hname
+FROM Hotel
+WHERE stars=@stars
+go
+SELECT * from hotelNames(5.0)
+
+
+
+3.
+//Funtion that prints  a table the names and id of hotels that have X starts 
+
+create fucntion hotelNames2 (@starts DECIMAL(10,2))
+RETURNS @HotelTable TABLE(hid INT, hname VARCHAR(100)) AS 
+begin
+	INSERT INTO @HotelTable 
+	SELECT hid,hname
+	FROM Hotel
+	WHERE stars=@stars
+	IF @@ROWCOUNT = 0
+		INSERT INTO @HotelTable VALUES (0, 'No rows found')
+	RETURN
+end
+go
+select * FROM hotelNames2(5.0)
+
+
+
+
+
+
+
+
+
+II. Views 
+
+create view ViewName
+AS 	
+	select stmt
+SELECT *
+FROM ViewName
+
+Examples:
+
+go
+create view view1
+AS SELECT cname,hname
+from client C
+INNER JOIN Booking B ON C.cid = B.cid
+INNER JOIN Hotel H on B.hid = H.hid
+go
+
+select *
+FROM view1
+
+
+III. System Catalog (System Tables)
+sys.indexes
+sys.parameters
+sys.sql.modules procedures, functions triggers, views....)
+sys.object_type = P|PK|FK|D|C|V|U|S|FN|IF|FT....
+selct*
+from sys.objects
+whre
+type  = 'PK'
+
+
+
+
+
+
+
+IV. TRIGGERS - automatically executed fro DDL(create, drop,alter Data Definition Language)/DML(insert, update, delete Data Manipulation Langauge) operations
+
+
+create trigger
+ON TableName
+FRO/AFTER/INSTEAD OF ____ (INSERT)
+AS begin
+	//inserted, deleted
+	.......
+END
+GO
+
+
+
+
+EXamples:
+
+1.for Update
+
+select * from BooksBoughtLog
+select * from BooksSoldLog
+
+go
+
+create trigger WhenUpdatingBook
+ON [dbo].Books
+FOR update
+AS BEGIN
+	set nocount on;
+	
+	insert into BooksSoldLog 
+	select i.bid, i.title, GETFATE(), d.quantity -i.quantity
+	from inserted i inner join deleted d on i.bid=d.bid
+	where i.quantity < d.quantiry
+END
+GO
+
+
+update Books set quantity = quantity-10
+where bid=1
+
+
+
+
+V. MERGE
+
+
+MERGE TargetTable AS Target
+USING SourceTable AS Source
+ON (...condition)
+WHEN MATCHED THEN
+	UPDATE SET....
+	   //OR
+	DELETE ....
+WHEN NOT MATCHED BY
+	SOURCE THEN...
+		UNDATE SET...
+		//OR
+		DELETE ... 
+
+Examples:
+
+merge Grades
+	using( SELECT MAX(gid) GID, MAX(grade), grade, stundet, course, MAX(gradedAt) gradedAt, Max(examRoom), examRoom
+	FROM Grades
+	group by stundet, course
+) MergeData
+On Grades.gid=MergeData.gid
+WHEN MATCHED THEN
+	UPDATE SET Grades.grade = MergeDATA.garde,
+	Grades.student =MergeData.stundent,
+	Grades.course=MergeData.course,
+	...
+
+when not matched by source THEN
+
+
+
+VI. Change Data Capture
+-introduced in 2008
+
+-sys.sp_cdc_enable_db
+-sys.sp_cdc_enable_table
+
+
+
+
+
+
+
+
+
+
+
+
+

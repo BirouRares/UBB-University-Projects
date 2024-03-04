@@ -1,0 +1,50 @@
+A relation is in the first normal form (1NF) if and only if it doesn't
+have any repeating attributes.
+
+• if a relation contains a functional dependency, associations among values can
+be stored multiple times (data redundancy)
+
+
+A relation is in the second normal form (2NF) if and only if:
+1. it is in the first normal form and
+2. every (simple or composite) non-prime attribute is fully functionally
+dependent on every key of the relation.
+
+
+A relation is in the third normal form (3NF) if and only if it is in the
+second normal form and no non-prime attribute is transitively dependent on
+any key in the relation
+Another definition: A relation 𝑅 is in the third normal form (3NF) iff, for every
+non-trivial functional dependency 𝑋 → 𝐴 that holds over 𝑅:
+• 𝑋 is a superkey, or
+• 𝐴 is a prime attribute.
+
+
+. A relation is in the Boyce-Codd normal form (BCNF) if and only if
+every determinant (for a functional dependency) is a key (informal definition -
+simplifying assumption: determinants are not too big; only non-trivial
+functional dependencies are considered).
+
+
+
+Definition. A relation 𝑅𝑅 is in 4NF iff, for every multi-valued dependency
+𝛼𝛼 ⇉ 𝛽𝛽 that holds over 𝑅𝑅, one of the statements below is true:
+• 𝛽𝛽 ⊆ 𝛼𝛼 or 𝛼𝛼 ∪ 𝛽𝛽 = 𝑅𝑅, or
+• 𝛼𝛼 is a superkey.
+• trivial multi-valued dependency 𝛼𝛼 ⇉ 𝛽𝛽 in relation 𝑅𝑅: 𝛽𝛽 ⊆ 𝛼𝛼 or 𝛼𝛼 ∪ 𝛽𝛽 = 𝑅𝑅
+• if 𝑅𝑅[𝛼𝛼, 𝛽𝛽, 𝛾𝛾] and 𝛼𝛼 ⇉ 𝛽𝛽 (non-trivial, 𝛼𝛼 not a superkey), 𝑅𝑅 is decomposed into
+the following relations:
+𝑅𝑅1[𝛼𝛼, 𝛽𝛽] = 𝛱𝛱𝛼𝛼⋃𝛽𝛽 𝑅𝑅
+𝑅𝑅2[𝛼𝛼,𝛾𝛾] = 𝛱𝛱𝛼𝛼⋃𝛾𝛾 𝑅𝑅
+• relation DFM' is decomposed into:
+DF [Department, FacultyMember]
+DM [Department, MeetingDate]
+
+
+Relation 𝑅𝑅 is in 5NF iff every non-trivial JD is implied by the
+candidate keys in R
+
+• JD ∗ {𝛼𝛼1, 𝛼𝛼2, ..., 𝛼𝛼m} on 𝑅𝑅 is trivial iff at least one 𝛼𝛼𝑖𝑖 is the set of all
+attributes of 𝑅𝑅.
+• JD ∗ {𝛼𝛼1, 𝛼𝛼2, ..., 𝛼𝛼m} on 𝑅𝑅 is implied by the candidate keys of 𝑅𝑅 iff each 𝛼𝛼𝑖𝑖 is
+a superkey in R

@@ -1,0 +1,149 @@
+I.
+1.
+a.T
+b.F
+c.F
+d.T
+ 
+2.
+a.F
+b.T
+c.F
+d.F
+e.F
+
+3.
+a.F
+b.F
+c.T
+d.F
+e.F
+
+4.
+a.F
+b.F
+c.T
+d.F
+e.F
+
+5.
+a.F
+b.F
+c.F
+d.F
+e.T
+
+6.
+a.T
+b.F
+c.F
+d.F
+e.F
+
+7.
+a.F
+b.F
+c.T
+d.F
+e.F
+
+8.
+a.F
+b.T
+c.F
+d.F
+e.F
+
+9.
+a.T
+b.F
+c.F
+d.F
+e.F
+
+10.
+a.?
+b.?
+c.?
+d.?
+e.?
+
+11.
+a.F
+b.T
+c.T
+d.F
+e.F
+
+12.
+a.F
+b.T
+c.F
+d.F
+e.F
+
+13.
+a.T
+b.F
+c.F
+d.T
+e.F
+
+II.
+1.
+CREATE TABLE T1
+(
+IDT1 INT PRIMARY KEY,
+C1 VARCHAR(100))
+
+CREATE TABLE T2
+(......??
+
+2.
+SELECT A,B,C
+FROM 
+	(SELECT A,B,ID
+	FROM R
+	WHERE M=70) t1
+INNER JOIN 
+	(SELCT C,IDT1
+	FROM S
+	WHERE N>5) t2
+     ON ID=IDT1
+
+3.
+RID	C2	C3
+
+2	202	10201
+4	400	40000
+5	400	40000
+6	600	90000
+
+4.
+?
+
+
+
+5.
+
+THE RESULT IS THE ORIGINAL TABLE
+
+
+
+6.
+
+RID->D
+A->D
+B->D
+D->D
+E->D 
+F->D
+
+7.
+
+R1 intersected R2 = R1 - (R1-R2)
+
+
+Theta R.ID=S.RID  (R X S)  -  (Theta R.ID= S.RID( R X S ) - Theta T.ID = U.TID ( T X U ))  
+
+

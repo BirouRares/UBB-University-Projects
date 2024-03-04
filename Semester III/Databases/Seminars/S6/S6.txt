@@ -1,0 +1,40 @@
+Seminar 7.
+Indexes(II)
+
+
+Rules:
+	-1 clusterd index and table
+	-cl. index key: Small, selective, static, increasing
+	-non-cl. index: -FK fields
+			- fields included in WHERE
+	-covering non-cl indexes -> for most executed queries
+	    X 1 index/col in a table => high overhead
+	-multicolumn indexes: order of the col. based on uniquness
+
+INDEX VIEWS:
+
+Restrictions:
+	1) ANSI_NULLS ON     (-> col is NULL vs. col=NULL)
+	   ANSI_PADDing  ON     (RESTRICTUINSL char(3)  'ab_'  vs 'ab')
+	   ANSI_WARNINGS  ON       (ON-warning for NULL values used in MIN,MAX,COUNT. ERR->10;ERR INSERT DATA EXCEDING THE DATATYPE)
+	   ARITHABORT  ON 
+	   CONCAT_NULL_YIELDS_NULL ON
+	   NUMERIC_ROUNDABORT OFF
+	   QUOTED_IDENTIFIER ON 
+
+	2)X ref. other views
+	3)X subqueries
+	4)cl. index+unique
+	5)Names->2part format
+	6)create view WITH SCHEMABINDING
+	7)X MIN,MAX,AVG,STDEV,VAR,....
+	8) select stmt. X outer joins, TOP, DISTINCT,HAVING,set operatiors, ORDER BY,..
+	9) COUNT -> COUNT_BIG
+	10)SUM->SUM(ISNULL(col,0))
+	11)view->deterministic
+		cl idx on the view => the view gets materialized then ncl idx can be added
+
+
+FRAGMENTATION:  - internal
+		- extent  => group of 8 contignous pages
+		- logical  

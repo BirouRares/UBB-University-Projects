@@ -1,0 +1,194 @@
+		S3. sored procedures, global variables, Dynamic Execution
+			the OUTPUT clause, CUrsors - in  SQL Server
+
+Stored procedures:
+	- group multiple SQL statements:
+CREATE  PROCEDURE  uspSPName
+AS
+begin ...
+...
+end
+
+GO -- batch separator
+EXEC (Execute) uspSPName
+uspSPName
+
+
+e.g., create procedure
+		usp HotelsNames
+AS
+   select hname
+   from Hotel
+GO
+exec uspHotels Names
+
+
+
+e.g.,  alter procedure
+		usp HotelsNames(@stans INT)
+AS
+   select hname
+   from Hotel
+   where no_starts - @stars
+GO
+exec uspHotels Names 5
+
+
+
+
+create proc uspNoHotelsByStars (@star INT  (=3  -> default value), @NoH INT OUTPUT)
+AS
+   select @NoH=count(*)
+   from Hotel
+   where no_stars=@stars
+GO
+declare @noHotels INT =0   // declaring 
+set @noHotels=0 	// initializing
+exec upsNoHotelsByStars @stars=5, @NoH=@noHotels OUTPUT
+Print @noHotels
+
+
+
+if @NoH=0
+	RAISERROR('ERROR',13,1)  //  -13-> SEVERITY[0,25]   >20->FATAL  >11 RED MSG + CATCH
+                                 //   -1 STATE [0,25]
+END 
+GO
+
+
+TRY
+BEGIN CATCH
+	Print ERROR_MESSAGE()
+	--------||------ SEVERITY()
+	--------||------  STATE()
+	PRINT @@ERROR
+END CATCH
+
+
+
+
+
+Global Variables:
+	- @@ERROR
+	- @@IDENTITY
+	- @@ROWCOUNT
+	- @@SERVERNAME
+	- @@SPID
+	- @@VERSION
+
+
+
+
+Dynamic Execution
+
+EXEC (' select * from Hotel')     -> the instruction between () will be executed
+
+
+
+
+sp_executesql N' select * from Hotel where hid =@hid', N'@hid, @hid=23
+NVARCHAR - 2 bytes/character
+
+
+
+
+The OUTPUT clause:
+	UPDATE - inserted + deleted
+	INSERT - inserted
+	DELETE - deleted
+
+
+
+
+UPDATE Hotel
+SET no_starts = 5
+OUTPUT inserted.hid, inserted.hname,
+	deleted.no_stars, inserted.no_stars,
+	SUSER_SNAME(), GETDATE()
+into LogTable  -- or @LogTable
+where hid=23
+
+
+
+
+
+
+
+
+declare @LogTable TABLE(...)
+Cursors - process a table in a row_by_row naner
+DECLARE CURSOR -select stnt
+OPEN - executs the select stnt
+FETCH   - NEXT
+	- PRIOR
+	- FIRST
+	- LAST
+UPDATE, DELETE, INSERT
+CLOSE - some resources are friend
+DEALLOCATE
+
+
+
+
+DECLARE @hid, @hname VARCHAR(200)
+declare HotelCursor CURSOR FOR
+	select hid,hname
+	from Hotel
+Open HotelCursor
+FETCH HotelCursor
+INTO @hid, @hname
+while @@FETCH_STATUS = 0
+BEGIN
+	-- CODE TO PROCESS ROW	
+	PRINT CAST (@hid as VARCHAR(10)) + @hname
+	FETCH HotelCursor
+	INTO @hid,@hname
+END
+CLOSe HotelCurosr
+deallocate ------||--------
+
+
+
+
+
+LAPTOP EXAMPLES:
+
+1.
+declare @selectString VARCHAR(MAX)
+set @selectString='select * from Hotel where hotel.hid=23'
+EXEC (@selectString)
+
+
+
+2.
+SQL Injection!!!!!
+
+declare @hid VARCHAR(100)='23 or 1=1; drop table Admins --'
+declare @selectString VARCHAR(MAX)
+set @selectString='select * from Hotel where hotel.hid' +@hid
+EXEC (@selectString)
+
+
+3.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
