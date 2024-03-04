@@ -1,0 +1,96 @@
+A:=Matrix( [1, 2], [3, 4]) 
+[] - elemente pe linie
+<> - elemenete pe coloana
+
+use exp(x) for e^x etc.
+
+with(linalg):
+	det(A)
+	inverse(A)
+	CharacteristicPolynomial(A,r)
+	Eigenvalues(A)
+	eigenvals, eigenvects = :=Eigenvectors(A)
+	
+	// verify that u1 corresponding to eigenvalue lambda1 is an eigenvector
+	u1:=<0,0,1> - column matrix
+	lambda1:=vals[1]
+	eval(A*u1=lambda1*u1) - they must be equal
+	
+DiagonalMatrix([]) - create diagonal matrix
+MatrixExponential - create exponential matrix
+
+Map(limit, MatrixExponential(t*A), t = infinity)
+
+> the following command returns a pair : X ' (t) = S(t)*c0 + P(t) ; S(t) is the first component. P(t) is the second;
+> with(DEtools); st := matrixDE(A, t);
+> Map(limit, st[1], t = infinity);
+
+compute integral
+evalf(Int(exp(-t^2), t = 0 .. 1, digits = 3, method = _Dexp))
+
+-- solving a differential system --
+dsolve({equations}, {variables})
+
+> eq1 := diff(x(t), t) = 2*x(t)-x(t)^2-x(t)*y(t);
+> eq2 := diff(y(t), t) = -y(t)+x(t)*y(t);   
+> dsolve({eq1, eq2}, {x(t), y(t)});
+
+-- function iterations --
+We show how to find the first 30 iterations of a function f starting from x0. Then we represent them using the command pointplot. 
+ x:=x0;
+ for i from 1 to 30 do x:=f(x): psi(i):=x: print(x); od: points:=[[n,psi(n)]$n=1..30]:with(plots): pointplot(points, symbol=circle);
+ 
+ contourplot(f(x,y), x=1..10, y=1..10)
+ 
+ 					Equilibria (Stability Analysis)
+					
+(1) { x' = 2x-x^2-xy
+	{ y' = -y + xy
+
+ - find all equilibria = solve using Maple the system:
+		{ 2x-x^2-xy = 0
+		{ -x + xy = 0
+		
+ - compute the Jacobian matrix of f:RxR->RxR,
+	f(x,y) = { f1(x,y) ) = ( 2x-x^2-xy )
+			 { f2(x,y) )   ( -x + xy)
+			 
+ - evaluate the Jacobian of f at (x*,y*)
+ - find eigenvalues of the Jf(x*,y*)
+ - plot the direction/vector field f
+	* in Maple, use dfieldplot
+ - plot a few orbits on the same plot ? alta intrebare
+
+-- irrelevant --	
+dx/dt = x' = x - xy , x = prey
+dy/dt = y' = -y + xy, y = predators
+----------------
+
+H(x,y) = x + y - ln(xy)
+
+Rezolvare:
+> eq1 := 2*x-x^2-x*y = 0
+> eq2 := -y+x*y = 0
+> solve({eq1, eq2});
+		# equilibrium points
+         {x = 0, y = 0}, {x = 2, y = 0}, {x = 1, y = 1}
+		 
+> with(linalg): with(DETools): with(VectorCalculus):
+ Jm1 := Jacobian([2*x-x^2-x*y, -y+x*y], [x, y])
+                  
+> A1 := subs([x = 0, y = 0], Jm1); # matrix for equilibrium point (0, 0)
+                  
+> A2 := subs([x = 2, y = 0], Jm1); # matrix for equilibrium point (2, 0)
+                  
+> A3 := subs([x = 1, y = 1], Jm1); # matrix for equilibrium point (1, 1)
+                  
+# based on the eigenvalues, we can determine the type and stability for each point
+> eigenvalues(A1);
+> eigenvalues(A2);
+> eigenvalues(A3);
+
+# plotting
+> eq1t := diff(x(t), t) = 2*x(t)-x(t)^2-x(t)*y(t);
+> eq2t := diff(y(t), t) = -y(t)+x(t)*y(t);               
+> dfieldplot([eq1t, eq2t], [x(t), y(t)], t = 0 .. 1, x = -3 .. 3, y = -3 .. 3);
+
