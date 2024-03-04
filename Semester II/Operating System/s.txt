@@ -1,0 +1,85 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <semaphore.h>
+
+#define NUM_STUDENTS 20
+#define GROUP_SIZE 5
+
+sem_t ticket_sem;
+sem_t tour_sem;
+sem_t group_sem;
+int ticket_count = 0, group_count = 0;
+
+void* student_thread(void* arg) {
+    int student_id = *(int*)arg;
+
+    // Sleep for 1-3 seconds
+    int sleep_time = 1 + rand() % 3;
+    sleep(sleep_time);
+
+    // Generate ticket ID
+    int ticket_id = 1000 + rand() % 9000;
+
+    // Save ticket ID and student ID to tickets.txt
+    FILE* file = fopen("tickets.txt", "a");
+    fprintf(file, "Ticket ID: %d, Student ID: %d\n", ticket_id, student_id);
+    fclose(file);
+
+    // Acquire the ticket semaphore
+    sem_wait(&ticket_sem);
+    ticket_count++;
+
+    // Check if enough tickets have been purchased
+    if (ticket_count % GROUP_SIZE == 0) {
+        group_count++;
+        printf("Group %d starts the museum tour!\n", group_count);
+
+        // Signal all waiting threads that the tour can start
+        for (int i = 0; i < GROUP_SIZE - 1; i++) {
+            sem_post(&tour_sem);
+        }
+    } else {
+        // Release the ticket semaphore
+        sem_post(&ticket_sem);
+
+        // Wait until enough tickets have been purchased
+        sem_wait(&tour_sem);
+    }
+
+    // Release the group semaphore
+    sem_post(&group_sem);
+
+    // Print the group number and thread ID
+    printf("Group %d: Student %d\n", group_count, student_id);
+
+    return NULL;
+}
+
+int main() {
+    pthread_t students[NUM_STUDENTS];
+    int student_ids[NUM_STUDENTS];
+
+    // Initialize semaphores
+    sem_init(&ticket_sem, 0, GROUP_SIZE);
+    sem_init(&tour_sem, 0, 0);
+    sem_init(&group_sem, 0, 1);
+
+    // Create and start student threads
+    for (int i = 0; i < NUM_STUDENTS; i++) {
+        student_ids[i] = i + 1;
+        pthread_create(&students[i], NULL, student_thread, &student_ids[i]);
+    }
+
+    // Wait for all student threads to finish
+    for (int i = 0; i < NUM_STUDENTS; i++) {
+        pthread_join(students[i], NULL);
+    }
+
+    // Cleanup semaphores
+    sem_destroy(&ticket_sem);
+    sem_destroy(&tour_sem);
+    sem_destroy(&group_sem);
+
+    return 0;
+}

@@ -1,0 +1,45 @@
+- see the running processes: while true; do clear; ps -f -u user; sleep 1; done
+- run the program.c  1. gcc -Wall -g -o program program.c   2. ./program
+- zombie process ps -ef | grep 'defunct'
+- memory leaks valgrind ./ex
+- kill all processes you can kill: kill -9 -1
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <sys/time.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <string.h>
+
+
+---------PIPES----------  
+
+int p[2];
+pipe(p);
+close(p[0]);->close for reading
+close(p[1]);->close for writing
+write(p[1],&x, sizeof(int));
+read(p[0],&x,sizeof(int));
+
+--------------FIFOS---------------
+
+mkfifo("a2b",0666);
+
+a2b=open("a2b", O_WRONLY);
+a2b=open("a2b", O_RDONLY);
+
+read(a2b, &n, sizeof(int));
+write(a2b, &n, sizeof(int));
+close(a2b);
+
+------------POPEN-------------
+
+fp=popen("bash cammand", "w-for write, r-for read);
+fprintf(fp,.....);
+fscanf(
+
+
+
