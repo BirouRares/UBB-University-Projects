@@ -13,7 +13,7 @@ Assignments and projects done for the University.
     * [:books: Object Oriented Programming](https://github.com/BirouRares/UBB-University-Projects/tree/main/Semester%20II/Object%20Oriented%20Programming/Labs)
     * [:books: Operating Systems](https://github.com/BirouRares/UBB-University-Projects/tree/main/Semester%20II/Operating%20System)
     * [:books: Geometry](https://github.com/BirouRares/UBB-University-Projects/tree/main/Semester%20II/Geometry)
-    * [:books:SD](https://github.com/BirouRares/UBB-University-Projects/tree/main/Semester%20II/SD)
+    * [:books:Dynamical Systems](https://github.com/BirouRares/UBB-University-Projects/tree/main/Semester%20II/SD)
 * [:computer: Semester III](https://github.com/BirouRares/UBB-University-Projects/tree/main/Semester%20III)
     * [:books: Advanced Programming Methods](https://github.com/BirouRares/UBB-University-Projects/tree/main/Semester%20III/Advanced%20Programming%20Methods)
     * [:books: Computer Networks](https://github.com/BirouRares/UBB-University-Projects/tree/main/Semester%20III/Computer%20Networks)
