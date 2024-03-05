@@ -1,7 +1,7 @@
 # UBB Computer Science : University Projects
 Assignments and projects done for the University.
 
-* [:computer: Semester I](Semester I/)
+* [:computer: Semester I](Semester_I/)
     * [:books: Computational-Logic](Semester-I/Computational-Logic/)
     * [:books: Computer Systems Architecture](Semester-I/ASC/)
     * [:books: Fundamentals-of-Programming](Semester-I/Fundamentals-of-Programming/)
