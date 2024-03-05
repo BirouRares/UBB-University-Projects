@@ -1,12 +1,12 @@
 # UBB Computer Science : University Projects
 Assignments and projects done for the University.
 
-* [:computer: Semester I]([Semester_I](https://github.com/BirouRares/UBB-University-Projects/tree/main/Semester%20I)/)
+* [:computer: Semester I](https://github.com/BirouRares/UBB-University-Projects/tree/main/Semester%20I)
     * [:books: Computational-Logic](https://github.com/BirouRares/UBB-University-Projects/tree/main/Semester%20I/Computational-Logic)
-    * [:books: Computer Systems Architecture](Semester-I/ASC/)
-    * [:books: Fundamentals-of-Programming](Semester-I/Fundamentals-of-Programming/)
-    * [:books: Algebra](Semester-I/Algebra/)
-    * [:books: Mathematical Analysis](Semester-I/Mathematical-Analysis/)
+    * [:books: Computer Systems Architecture](https://github.com/BirouRares/UBB-University-Projects/tree/main/Semester%20I/ASC).
+    * [:books: Fundamentals-of-Programming](https://github.com/BirouRares/UBB-University-Projects/tree/main/Semester%20I/Fundamentals-of-Programming)
+    * [:books: Algebra](https://github.com/BirouRares/UBB-University-Projects/tree/main/Semester%20I/Algebra)
+    * [:books: Mathematical Analysis](https://github.com/BirouRares/UBB-University-Projects/tree/main/Semester%20I/Mathematical%20Analysis)
 * [:computer: Semester II](Semester-2/)
     * [:books: Data Structures and Algorithms](Semester-2/Data Structures and Algorithms/)
     * [:books: Graph Algorithms](Semester-2/Graph-Algorithms/)
