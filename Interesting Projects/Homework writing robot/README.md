@@ -6,8 +6,6 @@ All the components are wired up to an  Arduino Uno with a CNC Shield V3. The sof
 
 ![](https://github.com/BirouRares/UBB-University-Projects/blob/main/Interesting%20Projects/Homework%20writing%20robot/IMG_20190506_154634.jpg)
 
-![](https://github.com/BirouRares/UBB-University-Projects/blob/main/Interesting%20Projects/Homework%20writing%20robot/IMG_20190510_145746.jpg)
-
 ![](https://github.com/BirouRares/UBB-University-Projects/blob/main/Interesting%20Projects/Homework%20writing%20robot/IMG_20190510_145824.jpg)
 
 ![](https://github.com/BirouRares/UBB-University-Projects/blob/main/Interesting%20Projects/Homework%20writing%20robot/60131289_290106205207806_501040941902069760_n.jpg)
