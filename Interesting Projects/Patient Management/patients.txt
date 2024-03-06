@@ -1,0 +1,11 @@
+patient1,cancer,chirurg,Marian,2023.07.10
+patient2,diabetes,dentist,Jan,2028.04.29
+patient6,undiagnosed, , ,2027.12.18
+patient3,undiagnosed, , ,2027.12.03
+patient4,carie,dentist,Anamaria,2025.09.20
+patient5,code,programator,Codrin,2025.03.07
+patient7,nush,programator,Codrin,2024.06.22
+patient8,apendicita,chirurg,Marian,2024.01.15
+patient9,dapendicita,chirurg,Jan,2023.07.30
+patient,mere,dentist,Anamaria,2023.07.11
+patient7,nsuhd,dentist,Anamaria,2024.07.29

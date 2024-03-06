@@ -1,0 +1,3 @@
+Marian,chirurg
+Anamaria,dentist
+Codrin,programator
