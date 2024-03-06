@@ -30,3 +30,10 @@ Assignments and projects done for the University.
     *  [:white_flower:SeeMe(Social Media App)](https://github.com/BirouRares/UBB-University-Projects/tree/main/Interesting%20Projects/SeeMe(Social%20Media%20App))
     *  [:factory:Toy Language Interpreter](https://github.com/BirouRares/UBB-University-Projects/tree/main/Interesting%20Projects/Toy%20Language%20Interpreter)
 
+
+<h3 align="left">Connect with me:</h3>
+<p align="left">
+<a href="https://www.linkedin.com/in/vlad-stefan-badea-61b261293/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="Birou.Rares" height="30" width="40" /></a>
+<a href="https://www.facebook.com/profile.php?id=100010767826026" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="Birou.Rares" height="30" width="40" /></a>
+<a href="[https://www.instagram.com/badeaxo/](https://www.instagram.com/raresbirou/)" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="Birou.Rares" height="30" width="40" /></a>
+</p>
