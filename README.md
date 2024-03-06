@@ -21,7 +21,8 @@ Assignments and projects done for the University.
     * [:computer: Functional & logic programming](https://github.com/BirouRares/UBB-University-Projects/tree/main/Semester%20III/Functional%20%26%20logic%20programming)
     * [:books: Probabilities & statistics](https://github.com/BirouRares/UBB-University-Projects/tree/main/Semester%20III/Probabilities%20%26%20statistics)
 
-*[:diamond_shape_with_a_dot_inside: Personal Projects](https://github.com/BirouRares/UBB-University-Projects/tree/main/Interesting%20Projects)
+
+* [:diamond_shape_with_a_dot_inside: Personal Projects](https://github.com/BirouRares/UBB-University-Projects/tree/main/Interesting%20Projects)
     *  [:video_game:Connect4](https://github.com/BirouRares/UBB-University-Projects/tree/main/Interesting%20Projects/Connect4%20Game)
     *  [:video_game:TankTrouble](https://github.com/BirouRares/UBB-University-Projects/tree/main/Interesting%20Projects/TankTrouble)
     *  [:scissors:Homework writing robot](https://github.com/BirouRares/UBB-University-Projects/tree/main/Interesting%20Projects/Homework%20writing%20robot)
