@@ -1,0 +1,4 @@
+Jucatorul 1(Rosu):
+Va folosi tastele W,A,S,D pentru a se misca si tasta Q pentru a trage un proiectil
+Jucatorul 2(Albastru):
+Va folosi sagetile pentru a se misca si tasta P pentru a trage un proiectil
