@@ -21,8 +21,8 @@ Assignments and projects done for the University.
     * [:computer: Functional & logic programming](https://github.com/BirouRares/UBB-University-Projects/tree/main/Semester%20III/Functional%20%26%20logic%20programming)
     * [:books: Probabilities & statistics](https://github.com/BirouRares/UBB-University-Projects/tree/main/Semester%20III/Probabilities%20%26%20statistics)
 
-# Some personal projects
-* [:diamond_shape_with_a_dot_inside: Personal Projects](https://github.com/BirouRares/UBB-University-Projects/tree/main/Interesting%20Projects)
+# Projects
+* [:diamond_shape_with_a_dot_inside: Projects](https://github.com/BirouRares/UBB-University-Projects/tree/main/Interesting%20Projects)
     *  [:video_game:Connect4](https://github.com/BirouRares/UBB-University-Projects/tree/main/Interesting%20Projects/Connect4%20Game)
     *  [:hospital:Patient Management](https://github.com/BirouRares/UBB-University-Projects/tree/main/Interesting%20Projects/Patient%20Management)
     *  [:factory:Toy Language Interpreter](https://github.com/BirouRares/UBB-University-Projects/tree/main/Interesting%20Projects/Toy%20Language%20Interpreter)
