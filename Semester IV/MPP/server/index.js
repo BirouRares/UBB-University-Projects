@@ -5,8 +5,10 @@ import bodyParser from 'body-parser';
 import CarRouter from './routers/car.js';
 import cors from 'cors';
 import AuthRouter from './routers/user.js';
+import http from 'http'; 
+import dotenv from 'dotenv'; 
 
-const mongoURI = process.env.MONGODB_URI;
+const mongoURI = "mongodb+srv://a:a@cluster0.qj8oc4y.mongodb.net/";
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
