@@ -5,8 +5,7 @@ import bodyParser from 'body-parser';
 import CarRouter from './routers/car.js';
 import cors from 'cors';
 import AuthRouter from './routers/user.js';
-import http from 'http'; 
-import dotenv from 'dotenv'; 
+import http from 'http';  
 
 const mongoURI = "mongodb+srv://a:a@cluster0.qj8oc4y.mongodb.net/";
 mongoose.connect(mongoURI, {
@@ -33,7 +32,7 @@ app.use(bodyParser.json());
 const PORT = 5000;
 const server = http.createServer(app);
 server.listen(PORT, () => {
-    console.log('Server is running on port ${PORT}');
+    console.log('Server is running');
 });
 
 app.use('/', CarRouter);
