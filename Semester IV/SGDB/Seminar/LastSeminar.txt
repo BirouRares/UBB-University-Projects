@@ -1,0 +1,113 @@
+Performance Tining in SQL Server(II)
+
+SPs
+
+DC(DATA CACHE)/PC(PLAN CACHE)
+
+HINTS
+
+* NOCOUNT ON --OFF
+    (DONE_IN_PROC)
+    
+*qualify SPs/objs with their schema
+
+CREATE PROC uspTest
+AS 
+    SELECT * FROM dbo.Tining
+GO
+
+EXEC dbo.uspTest
+
+*don't use sp_prefix
+
+*use UNION instead of OR for joins
+
+SELECT *
+FROM T1,T2
+WHERE T1.a=T2.a OR T1.b=T2.b
+
+SELECT * FROM T1,T2
+WHERE T1.a=T2.a
+UNION ALL
+SELECT *
+FROM T1,T2
+WHERE T1.b=T2.b
+
+
+*avoid JOINs on columns of different types
+
+SELECT * FROM T1,T2
+WHERE T1.float_col=T2.int_col
+
+
+* dynamic execution (sp_executesql)
+DECLARE @Query VARCHAR(500), @ID VARCHAR(5)='1'
+SET @Query = 'SELECT * FROM Pirates
+              WHERE ID=' +@ID
+EXEC (@Query)
+EXEC (@Query)
+
+SET @ID=2
+SET @QUERY='SELECT * FROM Pirates
+            WHERE ID=' +@ID
+EXEC(@Query) -- plan not reused
+
+--sp_executesql
+sys.dm_db_index_physical_stats
+
+*COUNT(*) DO NOT USE IT to do an existence check
+
+S * FROM
+WHERE 0<(SELECT COUNT(*) FROM ...)
+
+S * FROM
+WHERE EXISTS(SELECT ...)
+
+*keep transactions as short as possible
+
+
+
+Reusing exec palns -SPs
+
+|Orders|  ~ 120 000 rows
+|Orders with PID=1| ~ 5000 rows
+|Orders with PID=2| ~ 2
+
+sp_helpindex Orders
+--cl idx OID
+--ncl idx on PID
+
+C P uspTestEP(@PID INT)
+AS
+    S * F Orders
+    W PID = @PID
+GO
+EXEC uspTestEP 2
+--if plan in cache, reused
+--i.e, nlc idx seek +key lookup
+--not good for PID 1
+
+A P uspTestEP(@PID INT)
+AS
+    S * F Orders
+    W PID =@PID
+    OPTION(OPTIMIZE FOR (@PID=1))
+GO EXEC uspTestEP  2
+--cl idx scan
+
+
+
+A P uspTestEP(@PID INT)
+AS
+    S* F Orders
+    W PID=@PID
+    OPTION (RECOMPILE)
+    --OPTION(OPTIMIZE FOR(UNKWNOWN))
+GO
+
+EXEC uspTestEP 3
+
+
+
+
+

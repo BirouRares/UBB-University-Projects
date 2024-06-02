@@ -1,0 +1,112 @@
+#dialog-box 
+{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.dialog-header 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: move;
+    background-color: #f6f6f6;
+    padding: 10px;
+}
+
+.dialog-header h2 
+{
+    margin: 0;
+}
+
+.dialog-header button 
+{
+    background-color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: black;
+    padding: 5px 10px;
+}
+
+.dialog-header button:hover 
+{
+    cursor: pointer;
+}
+
+
+#dialog-box2 
+{
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.dialog-header2 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: move;
+    background-color: #f6f6f6;
+    padding: 10px;
+}
+
+.dialog-header2 h2 
+{
+    margin: 0;
+}
+
+.dialog-header2 button 
+{
+    background-color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: black;
+    padding: 5px 10px;
+}
+
+.dialog-header2 button:hover 
+{
+    cursor: pointer;
+}
+
+
+
+
+
+
+#open-dialog-btn 
+{
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+#open-dialog-btn:hover 
+{
+    background-color: #45a049;
+}

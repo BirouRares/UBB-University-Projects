@@ -1,0 +1,10 @@
+D:\Quick access files\SGDB\Labs\A1\A1\A1\bin\Debug\A1.exe.config
+D:\Quick access files\SGDB\Labs\A1\A1\A1\bin\Debug\A1.exe
+D:\Quick access files\SGDB\Labs\A1\A1\A1\bin\Debug\A1.pdb
+D:\Quick access files\SGDB\Labs\A1\A1\A1\obj\Debug\A1.csproj.AssemblyReference.cache
+D:\Quick access files\SGDB\Labs\A1\A1\A1\obj\Debug\A1.Form1.resources
+D:\Quick access files\SGDB\Labs\A1\A1\A1\obj\Debug\A1.Properties.Resources.resources
+D:\Quick access files\SGDB\Labs\A1\A1\A1\obj\Debug\A1.csproj.GenerateResource.cache
+D:\Quick access files\SGDB\Labs\A1\A1\A1\obj\Debug\A1.csproj.CoreCompileInputs.cache
+D:\Quick access files\SGDB\Labs\A1\A1\A1\obj\Debug\A1.exe
+D:\Quick access files\SGDB\Labs\A1\A1\A1\obj\Debug\A1.pdb

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body 
+        {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 
+        {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        table 
+        {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th, td 
+        {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th 
+        {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) 
+        {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover 
+        {
+            background-color: #ddd;
+        }
+
+        .action 
+        {
+            text-align: center;
+        }
+
+        .action a 
+        {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+            background-color: #f44336;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .action a:hover 
+        {
+            background-color: #d32f2f;
+        }
+        .pagination 
+        {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .pagination a 
+        {
+            color: black;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+        .pagination a.active 
+        {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+        .pagination a:hover:not(.active) 
+        {background-color: #ddd;}
+
+        .category
+        {
+            padding: 10px;
+            margin: 5px;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .category:hover 
+        {
+            cursor: pointer;
+            background-color: #f9f9f9;
+        }
+
+        ul.categories-list 
+        { 
+            list-style-type:disc;
+            padding-left: 20px;
+        }
+
+        .view-cart-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+
+    .view-cart-btn:hover {
+        background-color: #45a049;
+    }
+    </style>
+</head>
+<body>
+    <h1>Product Catalog</h1>
+    <ul id="categories" class="categories-list"></ul>
+    <div id="products"></div>
+
+
+    <script>
+        $(document).ready(function() {
+            // Load categories on page load
+            $.get("get_categories.php", function(data) {
+                $("#categories").html(data);
+            });
+
+            // Function to load products based on category and page
+            function loadProducts(categoryId, page) {
+                $.get("get_products.php", { category_id: categoryId, page: page }, function(data) {
+                    $("#products").html(data);
+                });
+            }
+
+            // Load products when a category is clicked
+            $(document).on("click", ".category", function() {
+                var categoryId = $(this).data("id");
+                loadProducts(categoryId, 1); // Load first page of products for the selected category
+            });
+
+            // Pagination handler
+            $(document).on("click", ".pagination a", function() {
+                var page = $(this).data("page");
+                var categoryId = $(this).data("category");
+                loadProducts(categoryId, page); // Load products for the selected page and category
+            });
+
+
+            // Add to Cart button click handler
+            $(document).on("click", ".add-to-cart", function() {
+                var productId = $(this).data("product-id");
+
+                // Add product to the session cart
+                $.ajax({
+                    url: 'add_to_cart.php',
+                    method: 'POST',
+                    data: { product_id: productId },
+                    success: function(response) {
+                        // Optionally, you can provide feedback to the user here
+                        console.log(response);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                    }
+                });
+            });
+
+
+        });
+    </script>
+    <button onclick="window.location.href='cart.php'" class="view-cart-btn">View Cart</button>
+</body>
+</html>

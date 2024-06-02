@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <title>21</title>
+
+        <style>
+            .outermost 
+            {
+                background-color: lightblue;
+                padding: 20px;
+                pointer-events: none; 
+            }
+            .second 
+            {
+                background-color: lightgreen;
+                padding: 20px;
+                pointer-events: none; 
+            }
+            .third 
+            {
+                background-color: lightcoral;
+                padding: 20px;
+                pointer-events: none; 
+            }
+            .innermost 
+            {
+                background-color: lightsalmon;
+                padding: 20px;
+                
+            }
+
+            .outermost:hover
+            {
+                background-color: black;
+            }
+            .second:hover
+            {
+                background-color: black;
+            }
+            .third:hover
+            {
+                background-color: black;
+            }
+            .outermost .second .third .innermost
+            {
+                pointer-events: auto;
+            }
+            .outermost .second .third .innermost:hover
+            { 
+                background-color:black;
+            }
+        </style>
+    </head>
+
+
+    <body>
+        <div class="outermost">
+            <div class="second">
+                <div class="third">
+                    <div class="innermost">
+                        Hover over me!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

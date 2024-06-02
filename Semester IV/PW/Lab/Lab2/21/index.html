@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>21</title>
+
+        <style>
+            div 
+            { 
+                outline: 1px solid black; 
+            } 
+            .outermost
+            {
+                padding: 10px;
+                background-color: rgb(0, 0, 0); 
+                
+            }
+            .second
+            {
+                background-color: rgb(8, 227, 8); 
+                padding: 10px;
+                
+            }
+            .third 
+            {
+                background-color: rgb(0, 52, 223);
+                padding: 10px;
+             }
+            .innermost
+            {
+                background-color: rgb(189, 110, 110); 
+                padding: 10px;
+            }
+
+            .outermost:hover 
+            {
+                background-color: red;
+            }
+
+            .outermost:hover .third
+            {
+                background-color: red;
+            }
+            
+            .outermost:hover .second
+            {
+                background-color: red;
+            }
+
+            .outermost:hover .innermost
+            {
+                background-color: red;
+            }
+
+            
+
+            
+        </style>
+    </head>
+
+
+    <body>
+
+        <div class="outermost">
+            <div class="second">
+              <div class="third">
+                <div class="innermost">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+    </body>
+</html>

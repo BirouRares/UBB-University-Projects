@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Dialog Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<button id="open-dialog-btn">Open Dialog</button>
+<div id="dialog-box">
+    <div class="dialog-header">
+        <h2>Dialog Box</h2>
+        <button id="close-dialog-btn">&times;</button>
+    </div>
+    <p>This is the default dialog which is useful for displaying information. </p>
+    <p>The dialog window can be moved, resized and closed with the 'x' icon.</p>
+</div>
+
+<div id="dialog-box2">
+    <div class="dialog-header2">
+        <h2>Dialog Box</h2>
+        <button id="close-dialog-btn2">&times;</button>
+    </div>
+    <p>This is the default dialog which is useful for displaying information. </p>
+    <p>The dialog window can be moved, resized and closed with the 'x' icon.</p>
+</div>
+
+<script>
+    $(document).ready(function () {
+        let isDragging = false;
+        let currentX;
+        let currentY;
+        let initialX;
+        let initialY;
+        let xOffset = 0;
+        let yOffset = 0;
+
+        $("#open-dialog-btn").click(function () {
+            $("#dialog-box").fadeIn();
+        });
+
+        $("#close-dialog-btn").click(function () {
+            $("#dialog-box").fadeOut();
+        });
+
+        $(".dialog-header").on("mousedown", function (event) {
+            isDragging = true;
+            initialX = event.clientX - xOffset;
+            initialY = event.clientY - yOffset;
+        });
+
+        $(document).on("mouseup", function () {
+            isDragging = false;
+        });
+
+        $(document).on("mousemove", function (event) {
+            if (isDragging) {
+                currentX = event.clientX - initialX;
+                currentY = event.clientY - initialY;
+
+                xOffset = currentX;
+                yOffset = currentY;
+                $("#dialog-box").css({
+                    transform: "translate(" + currentX + "px, " + currentY + "px)",
+                });
+            }
+        });
+    });
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        let isDragging = false;
+        let currentX;
+        let currentY;
+        let initialX;
+        let initialY;
+        let xOffset = 0;
+        let yOffset = 0;
+
+        $("#open-dialog-btn").click(function () {
+            $("#dialog-box2").fadeIn();
+        });
+
+        $("#close-dialog-btn2").click(function () {
+            $("#dialog-box2").fadeOut();
+        });
+
+        $(".dialog-header2").on("mousedown", function (event) {
+            isDragging = true;
+            initialX = event.clientX - xOffset;
+            initialY = event.clientY - yOffset;
+        });
+
+        $(document).on("mouseup", function () {
+            isDragging = false;
+        });
+
+        $(document).on("mousemove", function (event) {
+            if (isDragging) {
+                currentX = event.clientX - initialX;
+                currentY = event.clientY - initialY;
+
+                xOffset = currentX;
+                yOffset = currentY;
+                $("#dialog-box2").css({
+                    transform: "translate(" + currentX + "px, " + currentY + "px)",
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>

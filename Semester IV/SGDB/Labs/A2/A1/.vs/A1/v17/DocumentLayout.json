@@ -1,0 +1,91 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Quick access files\\SGDB\\Labs\\A2\\A1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{70FBF02D-53C0-4174-8003-CB6FAD4F0939}|A1\\A1.csproj|d:\\quick access files\\sgdb\\labs\\a2\\a1\\a1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70FBF02D-53C0-4174-8003-CB6FAD4F0939}|A1\\A1.csproj|solutionrelative:a1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70FBF02D-53C0-4174-8003-CB6FAD4F0939}|A1\\A1.csproj|d:\\quick access files\\sgdb\\labs\\a2\\a1\\a1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70FBF02D-53C0-4174-8003-CB6FAD4F0939}|A1\\A1.csproj|solutionrelative:a1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70FBF02D-53C0-4174-8003-CB6FAD4F0939}|A1\\A1.csproj|d:\\quick access files\\sgdb\\labs\\a2\\a1\\a1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{70FBF02D-53C0-4174-8003-CB6FAD4F0939}|A1\\A1.csproj|solutionrelative:a1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70FBF02D-53C0-4174-8003-CB6FAD4F0939}|A1\\A1.csproj|D:\\Quick access files\\SGDB\\Labs\\A2\\A1\\a1\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{70FBF02D-53C0-4174-8003-CB6FAD4F0939}|A1\\A1.csproj|solutionrelative:a1\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\Quick access files\\SGDB\\Labs\\A2\\A1\\A1\\Form1.cs",
+              "RelativeDocumentMoniker": "A1\\Form1.cs",
+              "ToolTip": "D:\\Quick access files\\SGDB\\Labs\\A2\\A1\\A1\\Form1.cs",
+              "RelativeToolTip": "A1\\Form1.cs",
+              "ViewState": "AQIAAFoAAAAAAAAAAAAowGoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T12:48:51.408Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Quick access files\\SGDB\\Labs\\A2\\A1\\A1\\Program.cs",
+              "RelativeDocumentMoniker": "A1\\Program.cs",
+              "ToolTip": "D:\\Quick access files\\SGDB\\Labs\\A2\\A1\\A1\\Program.cs",
+              "RelativeToolTip": "A1\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T12:48:10.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\Quick access files\\SGDB\\Labs\\A2\\A1\\A1\\Form1.cs",
+              "RelativeDocumentMoniker": "A1\\Form1.cs",
+              "ToolTip": "D:\\Quick access files\\SGDB\\Labs\\A2\\A1\\A1\\Form1.cs [Design]",
+              "RelativeToolTip": "A1\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T12:48:10.089Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "App.config",
+              "DocumentMoniker": "D:\\Quick access files\\SGDB\\Labs\\A2\\A1\\A1\\App.config",
+              "RelativeDocumentMoniker": "A1\\App.config",
+              "ToolTip": "D:\\Quick access files\\SGDB\\Labs\\A2\\A1\\A1\\App.config",
+              "RelativeToolTip": "A1\\App.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-04-07T21:33:40.629Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

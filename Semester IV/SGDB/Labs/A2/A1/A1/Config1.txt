@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<appSettings>
+		<add key="ParentQuery" value="SELECT * FROM Manufacturers"/>
+		<add key="ChildQuery" value="SELECT * FROM Products"/>
+		<add key="ParentTableName" value="Manufacturers"/>
+		<add key="ChildTableName" value="Products"/>
+		<add key="ParentPrimaryKey" value="ManufacturerID"/>
+		<add key="ChildForeignKey" value="ManufacturerID"/>
+	</appSettings>
+	
+	
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7.2" />
+    </startup>
+</configuration>
