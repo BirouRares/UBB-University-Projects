@@ -1,0 +1,38 @@
+Alphabet:
+a) Uppercase (A-Z) and lowercase (a-z) letters of the English alphabet
+b) Decimal digits (0-9)
+c) Underscore (_)
+
+Lexic:
+a) Special symbols, representing:
+- Operators:
+  - +, -, *, / (arithmetic operators)
+  - => (assignment operator)
+  - ==, <, <=, >, >=, != (relational operators)
+  
+- Separators:
+  - [ ] { } (brackets and braces)
+  - : ; , (punctuation)
+  - space (whitespace)
+
+- Reserved words:
+  - start, end, if, else, while, for, read, write, break, int
+
+b) Identifiers:
+- A sequence of letters, digits, or underscores, where the first character must be a letter or underscore. Identifiers may contain up to 256 characters.
+  - Rule: identifier ::= letter | "_" {letter | digit | "_"}
+  - letter ::= "A" | "B" | ... | "Z" | "a" | "b" | ... | "z"
+  - digit ::= "0" | "1" | ... | "9"
+
+c) Constants:
+1. Integer Constants:
+  - Rule: int_const ::= digit {digit}
+  - Example: 123, 456, 789
+
+2. Character Constants:
+  - Rule: char_const ::= 'letter' | 'digit'
+  - Example: 'A', '3'
+
+3. String Constants:
+  - Rule: string_const ::= '"' {char} '"'
+  - Example: "Hello", "12345"

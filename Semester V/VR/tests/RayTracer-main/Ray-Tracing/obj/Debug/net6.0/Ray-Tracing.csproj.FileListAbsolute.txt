@@ -1,0 +1,80 @@
+C:\Users\Vasile\Desktop\facultate\Virtual Reality\Lab1\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vasile\Desktop\facultate\Virtual Reality\Lab1\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.AssemblyInfoInputs.cache
+C:\Users\Vasile\Desktop\facultate\Virtual Reality\Lab1\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.AssemblyInfo.cs
+C:\Users\Vasile\Desktop\facultate\Virtual Reality\Lab1\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.csproj.CoreCompileInputs.cache
+C:\Users\Vasile\Desktop\facultate\Virtual Reality\Lab1\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\Ray-Tracing.exe
+C:\Users\Vasile\Desktop\facultate\Virtual Reality\Lab1\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\Ray-Tracing.deps.json
+C:\Users\Vasile\Desktop\facultate\Virtual Reality\Lab1\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\Ray-Tracing.runtimeconfig.json
+C:\Users\Vasile\Desktop\facultate\Virtual Reality\Lab1\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\Ray-Tracing.dll
+C:\Users\Vasile\Desktop\facultate\Virtual Reality\Lab1\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\Ray-Tracing.pdb
+C:\Users\Vasile\Desktop\facultate\Virtual Reality\Lab1\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Vasile\Desktop\facultate\Virtual Reality\Lab1\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\Vasile\Desktop\facultate\Virtual Reality\Lab1\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Vasile\Desktop\facultate\Virtual Reality\Lab1\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\Vasile\Desktop\facultate\Virtual Reality\Lab1\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.csproj.AssemblyReference.cache
+C:\Users\Vasile\Desktop\facultate\Virtual Reality\Lab1\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.csproj.CopyComplete
+C:\Users\Vasile\Desktop\facultate\Virtual Reality\Lab1\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.dll
+C:\Users\Vasile\Desktop\facultate\Virtual Reality\Lab1\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\refint\Ray-Tracing.dll
+C:\Users\Vasile\Desktop\facultate\Virtual Reality\Lab1\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.pdb
+C:\Users\Vasile\Desktop\facultate\Virtual Reality\Lab1\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.genruntimeconfig.cache
+C:\Users\Vasile\Desktop\facultate\Virtual Reality\Lab1\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\ref\Ray-Tracing.dll
+D:\An_3\VR\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\Ray-Tracing.exe
+D:\An_3\VR\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\Ray-Tracing.deps.json
+D:\An_3\VR\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\Ray-Tracing.runtimeconfig.json
+D:\An_3\VR\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\Ray-Tracing.dll
+D:\An_3\VR\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\Ray-Tracing.pdb
+D:\An_3\VR\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\An_3\VR\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\An_3\VR\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\An_3\VR\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\An_3\VR\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.csproj.AssemblyReference.cache
+D:\An_3\VR\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.GeneratedMSBuildEditorConfig.editorconfig
+D:\An_3\VR\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.AssemblyInfoInputs.cache
+D:\An_3\VR\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.AssemblyInfo.cs
+D:\An_3\VR\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.csproj.CoreCompileInputs.cache
+D:\An_3\VR\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.csproj.CopyComplete
+D:\An_3\VR\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.dll
+D:\An_3\VR\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\refint\Ray-Tracing.dll
+D:\An_3\VR\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.pdb
+D:\An_3\VR\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.genruntimeconfig.cache
+D:\An_3\VR\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\ref\Ray-Tracing.dll
+E:\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\Ray-Tracing.exe
+E:\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\Ray-Tracing.deps.json
+E:\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\Ray-Tracing.runtimeconfig.json
+E:\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\Ray-Tracing.dll
+E:\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\Ray-Tracing.pdb
+E:\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+E:\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\System.Drawing.Common.dll
+E:\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+E:\Ray-Tracing\Ray-Tracing\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+E:\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.csproj.AssemblyReference.cache
+E:\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.GeneratedMSBuildEditorConfig.editorconfig
+E:\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.AssemblyInfoInputs.cache
+E:\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.AssemblyInfo.cs
+E:\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.csproj.CoreCompileInputs.cache
+E:\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.csproj.CopyComplete
+E:\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.dll
+E:\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\refint\Ray-Tracing.dll
+E:\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.pdb
+E:\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.genruntimeconfig.cache
+E:\Ray-Tracing\Ray-Tracing\obj\Debug\net6.0\ref\Ray-Tracing.dll
+D:\Quick access files\VR\RayTracer-main\Ray-Tracing\bin\Debug\net6.0\Ray-Tracing.exe
+D:\Quick access files\VR\RayTracer-main\Ray-Tracing\bin\Debug\net6.0\Ray-Tracing.deps.json
+D:\Quick access files\VR\RayTracer-main\Ray-Tracing\bin\Debug\net6.0\Ray-Tracing.runtimeconfig.json
+D:\Quick access files\VR\RayTracer-main\Ray-Tracing\bin\Debug\net6.0\Ray-Tracing.dll
+D:\Quick access files\VR\RayTracer-main\Ray-Tracing\bin\Debug\net6.0\Ray-Tracing.pdb
+D:\Quick access files\VR\RayTracer-main\Ray-Tracing\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Quick access files\VR\RayTracer-main\Ray-Tracing\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Quick access files\VR\RayTracer-main\Ray-Tracing\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Quick access files\VR\RayTracer-main\Ray-Tracing\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\Quick access files\VR\RayTracer-main\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.csproj.AssemblyReference.cache
+D:\Quick access files\VR\RayTracer-main\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.GeneratedMSBuildEditorConfig.editorconfig
+D:\Quick access files\VR\RayTracer-main\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.AssemblyInfoInputs.cache
+D:\Quick access files\VR\RayTracer-main\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.AssemblyInfo.cs
+D:\Quick access files\VR\RayTracer-main\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.csproj.CoreCompileInputs.cache
+D:\Quick access files\VR\RayTracer-main\Ray-Tracing\obj\Debug\net6.0\Ray-Trac.B4A94F12.Up2Date
+D:\Quick access files\VR\RayTracer-main\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.dll
+D:\Quick access files\VR\RayTracer-main\Ray-Tracing\obj\Debug\net6.0\refint\Ray-Tracing.dll
+D:\Quick access files\VR\RayTracer-main\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.pdb
+D:\Quick access files\VR\RayTracer-main\Ray-Tracing\obj\Debug\net6.0\Ray-Tracing.genruntimeconfig.cache
+D:\Quick access files\VR\RayTracer-main\Ray-Tracing\obj\Debug\net6.0\ref\Ray-Tracing.dll

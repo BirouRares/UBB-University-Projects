@@ -1,0 +1,272 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Quick access files\\VR\\complete raytracer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|d:\\quick access files\\vr\\complete raytracer\\raytracer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|solutionrelative:raytracer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|d:\\quick access files\\vr\\complete raytracer\\rawctmask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|solutionrelative:rawctmask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|d:\\quick access files\\vr\\complete raytracer\\ellipsoid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|solutionrelative:ellipsoid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|d:\\quick access files\\vr\\complete raytracer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|d:\\quick access files\\vr\\complete raytracer\\geometry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|solutionrelative:geometry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|d:\\quick access files\\vr\\complete raytracer\\intersection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|solutionrelative:intersection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|d:\\quick access files\\vr\\complete raytracer\\material.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|solutionrelative:material.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|d:\\quick access files\\vr\\complete raytracer\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|solutionrelative:camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|d:\\quick access files\\vr\\complete raytracer\\light.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|solutionrelative:light.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|d:\\quick access files\\vr\\complete raytracer\\colormap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|solutionrelative:colormap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|d:\\quick access files\\vr\\complete raytracer\\sphere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|solutionrelative:sphere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|d:\\quick access files\\vr\\complete raytracer\\vector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|solutionrelative:vector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|d:\\quick access files\\vr\\complete raytracer\\color.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|solutionrelative:color.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|d:\\quick access files\\vr\\complete raytracer\\line.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BFEB06-8E10-4C49-B0DF-27ED8EA3590E}|ray-tracer.csproj|solutionrelative:line.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 12,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Vector.cs",
+              "DocumentMoniker": "D:\\Quick access files\\VR\\complete raytracer\\Vector.cs",
+              "RelativeDocumentMoniker": "Vector.cs",
+              "ToolTip": "D:\\Quick access files\\VR\\complete raytracer\\Vector.cs",
+              "RelativeToolTip": "Vector.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAIA+wFsAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T17:51:15.294Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Color.cs",
+              "DocumentMoniker": "D:\\Quick access files\\VR\\complete raytracer\\Color.cs",
+              "RelativeDocumentMoniker": "Color.cs",
+              "ToolTip": "D:\\Quick access files\\VR\\complete raytracer\\Color.cs",
+              "RelativeToolTip": "Color.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAywC0AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T19:08:49.821Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Line.cs",
+              "DocumentMoniker": "D:\\Quick access files\\VR\\complete raytracer\\Line.cs",
+              "RelativeDocumentMoniker": "Line.cs",
+              "ToolTip": "D:\\Quick access files\\VR\\complete raytracer\\Line.cs",
+              "RelativeToolTip": "Line.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAjwBQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T17:51:05.472Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Sphere.cs",
+              "DocumentMoniker": "D:\\Quick access files\\VR\\complete raytracer\\Sphere.cs",
+              "RelativeDocumentMoniker": "Sphere.cs",
+              "ToolTip": "D:\\Quick access files\\VR\\complete raytracer\\Sphere.cs",
+              "RelativeToolTip": "Sphere.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T19:08:57.013Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Geometry.cs",
+              "DocumentMoniker": "D:\\Quick access files\\VR\\complete raytracer\\Geometry.cs",
+              "RelativeDocumentMoniker": "Geometry.cs",
+              "ToolTip": "D:\\Quick access files\\VR\\complete raytracer\\Geometry.cs",
+              "RelativeToolTip": "Geometry.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA3wBIAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-15T19:58:06.759Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ColorMap.cs",
+              "DocumentMoniker": "D:\\Quick access files\\VR\\complete raytracer\\ColorMap.cs",
+              "RelativeDocumentMoniker": "ColorMap.cs",
+              "ToolTip": "D:\\Quick access files\\VR\\complete raytracer\\ColorMap.cs",
+              "RelativeToolTip": "ColorMap.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T15:47:30.416Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Light.cs",
+              "DocumentMoniker": "D:\\Quick access files\\VR\\complete raytracer\\Light.cs",
+              "RelativeDocumentMoniker": "Light.cs",
+              "ToolTip": "D:\\Quick access files\\VR\\complete raytracer\\Light.cs",
+              "RelativeToolTip": "Light.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAYwAcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T19:08:54.092Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Material.cs",
+              "DocumentMoniker": "D:\\Quick access files\\VR\\complete raytracer\\Material.cs",
+              "RelativeDocumentMoniker": "Material.cs",
+              "ToolTip": "D:\\Quick access files\\VR\\complete raytracer\\Material.cs",
+              "RelativeToolTip": "Material.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAgwAUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T19:08:55.108Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Intersection.cs",
+              "DocumentMoniker": "D:\\Quick access files\\VR\\complete raytracer\\Intersection.cs",
+              "RelativeDocumentMoniker": "Intersection.cs",
+              "ToolTip": "D:\\Quick access files\\VR\\complete raytracer\\Intersection.cs",
+              "RelativeToolTip": "Intersection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T19:08:53.59Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Camera.cs",
+              "DocumentMoniker": "D:\\Quick access files\\VR\\complete raytracer\\Camera.cs",
+              "RelativeDocumentMoniker": "Camera.cs",
+              "ToolTip": "D:\\Quick access files\\VR\\complete raytracer\\Camera.cs",
+              "RelativeToolTip": "Camera.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T18:09:53.421Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Ellipsoid.cs",
+              "DocumentMoniker": "D:\\Quick access files\\VR\\complete raytracer\\Ellipsoid.cs",
+              "RelativeDocumentMoniker": "Ellipsoid.cs",
+              "ToolTip": "D:\\Quick access files\\VR\\complete raytracer\\Ellipsoid.cs",
+              "RelativeToolTip": "Ellipsoid.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAnwEMAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T17:37:30.596Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RawCTMask.cs",
+              "DocumentMoniker": "D:\\Quick access files\\VR\\complete raytracer\\RawCTMask.cs",
+              "RelativeDocumentMoniker": "RawCTMask.cs",
+              "ToolTip": "D:\\Quick access files\\VR\\complete raytracer\\RawCTMask.cs",
+              "RelativeToolTip": "RawCTMask.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAgwFwAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T08:05:46.6Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RayTracer.cs",
+              "DocumentMoniker": "D:\\Quick access files\\VR\\complete raytracer\\RayTracer.cs",
+              "RelativeDocumentMoniker": "RayTracer.cs",
+              "ToolTip": "D:\\Quick access files\\VR\\complete raytracer\\RayTracer.cs",
+              "RelativeToolTip": "RayTracer.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAgwCwAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T05:46:03.389Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Quick access files\\VR\\complete raytracer\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Quick access files\\VR\\complete raytracer\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T09:08:18.643Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

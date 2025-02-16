@@ -1,0 +1,3 @@
+silver: pe frontend- sa poti verifica daca ii picat netu sau serveru(tot timpu), pe backend sa generezi pe un alt thread 
+	sa folosesti un faker sa populezi la (k secunde)-sistem de populare automant(web socket)
+goldu: sa dai update in timp real

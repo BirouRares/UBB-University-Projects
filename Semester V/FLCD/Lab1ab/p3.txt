@@ -1,0 +1,19 @@
+# Program: Sum of first n natural numbers using the mini-language
+
+Declaration:
+n->integer
+sum->integer
+i->integer
+
+start
+
+read(n),
+sum=>0,
+
+for(i=>1; i<=n; i=>i+1):{
+    sum=>sum+i,
+}:
+
+write(sum),
+
+end

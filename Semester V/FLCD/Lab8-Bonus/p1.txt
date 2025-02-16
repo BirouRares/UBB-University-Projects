@@ -1,0 +1,18 @@
+BEGIN
+    a: int;
+    b: int;
+    c: int;
+    max: int;
+    
+    a=1;
+    b=5;
+    c=-3;
+
+    if a > b {
+        max = a;
+    } else {
+        max = b;
+    }
+
+    write(max);
+END

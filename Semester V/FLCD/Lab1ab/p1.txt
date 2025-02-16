@@ -1,0 +1,25 @@
+# Program: Find GCD of two numbers using the mini-language
+
+Declaration:
+a->integer
+b->integer
+r->integer
+
+start
+
+read(a),
+read(b),
+
+if(a==0 && b==0):{ 
+    then write(-1), 
+}:
+else:{
+    while(b>0):{
+        r=>a%b,
+        a=>b,
+        b=>r,
+    }:
+    write(a);
+}:
+
+end

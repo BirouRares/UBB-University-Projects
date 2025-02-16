@@ -1,0 +1,29 @@
+program ::= "start" compound_statement "end"
+
+compound_statement ::= ":{" statement_list "}:"
+
+statement_list ::= statement | statement ";" statement_list
+
+statement ::= declaration | assignment_statement | if_statement | while_statement | for_statement | iostmt | break_statement
+
+declaration ::= IDENTIFIER "->" type
+type ::= "int"
+
+assignment_statement ::= IDENTIFIER "=>" expression
+
+expression ::= expression "+" term | expression "-" term | term
+term ::= term "*" factor | term "/" factor | factor
+factor ::= "(" expression ")" | IDENTIFIER | int_const
+
+iostmt ::= "read" "(" IDENTIFIER ")" | "write" "(" IDENTIFIER ")" | "write" "(" int_const ")"
+
+if_statement ::= "if" "(" condition ")" compound_statement | "if" "(" condition ")" compound_statement "else" compound_statement
+
+while_statement ::= "while" "(" condition ")" compound_statement
+
+for_statement ::= "for" "(" assignment_statement ";" condition ";" assignment_statement ")" compound_statement
+
+break_statement ::= "break"
+
+condition ::= expression relation expression
+relation ::= "==" | "<" | "<=" | ">" | ">=" | "!="

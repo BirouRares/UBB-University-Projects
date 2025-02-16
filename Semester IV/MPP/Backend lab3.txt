@@ -1,0 +1,161 @@
+import express from 'express';
+import cors from 'cors';
+import { Sequelize, DataTypes } from 'sequelize';
+
+const app = express();
+app.use(express.json());
+app.use(cors());
+
+// Initialize Sequelize with MySQL connection details
+const sequelize = new Sequelize('test', 'root', 'informatica', {
+  host: 'localhost',
+  dialect: 'mysql',
+});
+
+// Define Car model
+const Car = sequelize.define('Car', {
+  CarName: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  Engine: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  Price: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+});
+
+// Define Owner model
+const Owner = sequelize.define('Owner', {
+  OwnerName: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  Age: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+});
+
+// Define associations between Car and Owner
+Owner.hasMany(Car, { foreignKey: 'idOwner', as: 'cars' });
+Car.belongsTo(Owner, { foreignKey: 'idOwner', as: 'owner' });
+
+
+sequelize.sync().then(() => {
+    console.log('Database synchronized');
+  }).catch(err => {
+    console.error('Unable to sync database:', err);
+  });
+
+
+// Home route
+app.get('/', (req, res) => {
+  res.json('Hello World');
+});
+
+// Get all cars
+app.get('/cars', async (req, res) => {
+  const cars = await Car.findAll();
+  res.json(cars);
+});
+
+// Get all owners
+app.get('/owners', async (req, res) => {
+  const owners = await Owner.findAll();
+  res.json(owners);
+});
+
+// Add a new car
+app.post('/cars', async (req, res) => {
+  try {
+    const { CarName, Engine, Price, idOwner } = req.body;
+    const car = await Car.create({ CarName, Engine, Price, idOwner });
+    res.json('Car added');
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Add a new owner
+app.post('/owners', async (req, res) => {
+  try {
+    const { OwnerName, Age } = req.body;
+    const owner = await Owner.create({ OwnerName, Age });
+    res.json('Owner added');
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Delete a car by ID
+app.delete('/cars/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    await Car.destroy({ where: { idCar: id } });
+    res.json('Car deleted');
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Delete an owner by ID
+app.delete('/owners/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    await Owner.destroy({ where: { id: id } });
+    res.json('Owner deleted');
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Update a car by ID
+app.put('/cars/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { CarName, Engine, Price, idOwner } = req.body;
+    await Car.update({ CarName, Engine, Price, idOwner }, { where: { idCar: id } });
+    res.json('Car updated');
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Update an owner by ID
+app.put('/owners/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { OwnerName, Age } = req.body;
+    await Owner.update({ OwnerName, Age }, { where: { idOwner: id } });
+    res.json('Owner updated');
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Get how many cars each owner has
+app.get('/carOwners', async (req, res) => {
+    try {
+      const ownersWithCars = await Owner.findAll({
+        attributes: ['OwnerName', [sequelize.fn('COUNT', sequelize.col('cars.id')), 'NumberOfCars']],
+        include: [{ model: Car, as: 'cars', attributes: [] }],
+        group: ['Owner.idOwner'],
+      });
+      res.json(ownersWithCars);
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  });
+  
+
+// Start the server
+const PORT = 5000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
+export default app;

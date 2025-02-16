@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "rhChqMSMSIU=",
+  "success": true,
+  "projectFilePath": "D:\\Quick access files\\VR\\tests\\complete raytracer\\ray-tracer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Birou Rares\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0-rc.2.23479.6\\microsoft.win32.systemevents.8.0.0-rc.2.23479.6.nupkg.sha512",
+    "C:\\Users\\Birou Rares\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

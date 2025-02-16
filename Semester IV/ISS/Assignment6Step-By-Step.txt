@@ -1,0 +1,49 @@
+Step-by-step tutorial: 
+
+0) Modifica connection string-ul in appsettings.json
+1) Creaza un model dupa cel de Location, daca intapini un foreign key din alt tabel, referinta la tabelul parinte se face ca in exemplul de mai jos:
+	
+	
+	[Key][DatabaseGenerated(DatabaseGeneratedOption.Identity)] public int Id { get; set; }
+        [Required][MaxLength(64)] public string Name { get; set; } = string.Empty;
+        [Required][MaxLength(64)] public string Category { get; set; } = string.Empty;
+        [Required][MaxLength(64)] public string Brand { get; set; } = string.Empty;
+        [Required] public string Description { get; set; } = string.Empty;
+        [Required] public string ImageURL { get; set; } = string.Empty;
+        [Required] public string Attributes { get; set; } = string.Empty;
+        [NotMapped] public IDictionary<string, string> AttributesDict { get; set; } = new Dictionary<string, string>();
+
+        public ICollection<Review> Reviews { get; } = new List<Review>();
+        public ICollection<FavouriteProduct> FavouriteProducts { get; } = new List<FavouriteProduct>();
+        public ICollection<Listing> Listings { get; } = new List<Listing>();
+
+        public ICollection<NewProductAlert> NewProductAlerts { get; } = new List<NewProductAlert>();
+        public ICollection<BackInStockAlert> BackInStockAlerts { get; } = new List<BackInStockAlert>();
+        public ICollection<PriceDropAlert> PriceDropAlerts { get; } = new List<PriceDropAlert>();
+
+
+public class Listing
+    {
+        [Key] [DatabaseGenerated(DatabaseGeneratedOption.Identity)] public int Id { get; set; }
+
+        [ForeignKey("Product")]
+        [Required] public int ProductId { get; set; }
+        public Product Product { get; set; } = null!;
+
+        [ForeignKey("Marketplace")]
+        [Required] public int MarketplaceId { get; set; }
+        public Marketplace Marketplace { get; set; } = null!;
+
+        public int Price { get; set; } = 0;
+
+        public ICollection<Sale> Sales { get; } = new List<Sale>();
+        public ICollection<AdRecommendation> AdRecommendations { get; } = new List<AdRecommendation>();
+
+Unde un Listing are un singur produs, un Produs poate face parte din mai multe listinguri (i.e 1:n)
+
+2) Faci DTO ca la Location, contine doar tipuri de variabila primitive (nu contine liste sau alte clase, de exemplu in PostSavedDTO nu o sa ai variabila tip Post sau User)
+3) Adaugi functii pentru entitatea ta in BaseToDTOConverters si in DTOToBaseConverters exact ca in exemplu
+4) Migrare: View -> Other Windows -> Package Manager Console -> add-migration numeMigratie -> update-database
+5) Creezi si modifici controllerul: click dreapta pe folder controllers -> add -> controller -> API -> API Controller with actions, using Entity Framework si modifica
+codul generat pentru a arata ca cel de la Controller (unde am pus eu DTO si conversii trebuie sa inlocuiti si voi, altfel nu va rula)
+6) Porniti proiectul, asteptati sa va bage in Swagger si testati un post, getAll, delete etc

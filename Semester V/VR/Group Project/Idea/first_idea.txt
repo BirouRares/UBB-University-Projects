@@ -1,0 +1,35 @@
+Project title: Free Fall
+
+Team members: 
+	Birou Rares Gabriel
+	Bica Doru
+	Bucur Mihnea
+
+Phobia: Fear of heights 
+
+References: 
+https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2021.671871/full
+https://www.researchgate.net/profile/Pierre-Leboucher/publication/281816016_E-virtual_reality_exposure_therapy_in_acrophobia_A_pilot_study/links/561ba64908aea803672420b2/E-virtual-reality-exposure-therapy-in-acrophobia-A-pilot-study.pdf
+https://pmc.ncbi.nlm.nih.gov/articles/PMC9521642/
+
+For fear of heights, the therapy involves gradually exposing the patient to height-related situations, starting from mild to more challenging scenarios, to desensitize their fear response.
+Core Principles of Exposure Therapy
+Gradual Exposure: Start with low-stress situations and progress to higher-stress scenarios.
+Repetition: Repeated exposure helps normalize the feared situation and reduce the emotional response.
+Safety and Control: Ensure the patient feels safe, with the ability to pause or stop if overwhelmed.
+
+
+General idea:
+The project revolves around a player progressively jumping into a swimming pool from higher platforms. The player reaches these platforms via an elevator, symbolizing gradual exposure to increasing heights. The serene and fun setting of a pool makes the exposure less intimidating and more engaging.
+Objective: Help the player (representing someone with acrophobia) desensitize to heights by combining gamification (fun mechanics) with psychological techniques like gradual exposure.
+
+
+The stages of exposure:
+Design Objectives:
+Create a calming and safe environment to reduce initial fear. Gradually increase the height levels for systematic exposure.
+Incorporate positive feedback and reinforcement after each jump.
+Features to Include:
+An elevator system that moves players to the next level.
+A clear progression of heights (marked levels like "Level 1: Low Dive" to "Level 4: Sky Dive").
+Calming visuals , such as soothing water effects .
+

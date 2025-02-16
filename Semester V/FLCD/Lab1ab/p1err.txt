@@ -1,0 +1,25 @@
+# Program with lexical errors
+
+Declaration:
+a->integer
+b->integer
+r->integer
+
+start
+
+read(a),
+read(b),
+
+if(a == 0 && b==0):{
+    then write(-1), 
+}:
+else:{
+    while(b>0):{
+        r=>a%b,
+        a==>b,   # Lexical error: '==>' should be '=>'
+        b=>r,,
+    }:           # Lexical error: Extra comma
+    write(a);
+}:
+
+end

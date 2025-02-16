@@ -1,0 +1,68 @@
+%{
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "lang.tab.h"
+int line_num = 1;
+%}
+
+%option noyywrap
+%option caseless
+
+DIGIT [0-9]
+LETTER [a-zA-Z]
+SYMBOLS [!#%^*+-/<=>_.,:;]
+IDENTIFIER ({LETTER}|_)+({LETTER}|{DIGIT})*
+INVALID_IDENTIFIER ({DIGIT}+{LETTER}+|{DIGIT}+_)
+INTEGER_CONSTANT [+-]?{DIGIT}+
+STRING_CONSTANT \"({LETTER}|{DIGIT}|{SYMBOLS})*\"
+
+%%
+
+"BEGIN" { printf("Keyword found: %s\n", yytext); return BEGIN_BLOCK; }
+"END" { printf("Keyword found: %s\n", yytext); return END_BLOCK; }
+"if" { printf("Keyword found: %s\n", yytext); return IF; }
+"else" { printf("Keyword found: %s\n", yytext); return ELSE; }
+"while" { printf("Keyword found: %s\n", yytext); return WHILE; }
+"read" { printf("Keyword found: %s\n", yytext); return READ; }
+"write" { printf("Keyword found: %s\n", yytext); return WRITE; }
+"int" { printf("Keyword found: %s\n", yytext); return INT; }
+"string" { printf("Keyword found: %s\n", yytext); return STRING; }
+"char" { printf("Keyword found: %s\n", yytext); return CHAR; }
+"boolean" { printf("Keyword found: %s\n", yytext); return BOOLEAN; }
+"real" { printf("Keyword found: %s\n", yytext); return REAL; }
+
+"+" { printf("Operator found: %s\n", yytext); return PLUS; }
+"-" { printf("Operator found: %s\n", yytext); return MINUS; }
+"*" { printf("Operator found: %s\n", yytext); return TIMES; }
+"/" { printf("Operator found: %s\n", yytext); return DIVIDE; }
+"%" { printf("Operator found: %s\n", yytext); return MODULO; }
+"=" { printf("Operator found: %s\n", yytext); return ASSIGN; }
+"==" { printf("Operator found: %s\n", yytext); return EQ; }
+"!=" { printf("Operator found: %s\n", yytext); return NEQ; }
+"<" { printf("Operator found: %s\n", yytext); return LESS; }
+"<=" { printf("Operator found: %s\n", yytext); return LESSEQ; }
+">" { printf("Operator found: %s\n", yytext); return GREATER; }
+">=" { printf("Operator found: %s\n", yytext); return GREATEREQ; }
+
+"{" { printf("Separator found: %s\n", yytext); return BRACEOPEN; }
+"}" { printf("Separator found: %s\n", yytext); return BRACECLOSE; }
+"(" { printf("Separator found: %s\n", yytext); return PARENOPEN; }
+")" { printf("Separator found: %s\n", yytext); return PARENCLOSE; }
+"[" { printf("Separator found: %s\n", yytext); return SQBRACKETOPEN; }
+"]" { printf("Separator found: %s\n", yytext); return SQBRACKETCLOSE; }
+":" { printf("Separator found: %s\n", yytext); return COLON; }
+";" { printf("Separator found: %s\n", yytext); return SEMICOLON; }
+
+{IDENTIFIER} { printf("Identifier found: %s\n", yytext); return IDENTIFIER; }
+{INTEGER_CONSTANT} { printf("Integer constant found: %s\n", yytext); return INTCONSTANT; }
+{STRING_CONSTANT} { printf("String constant found: %s\n", yytext); return STRINGCONSTANT; }
+{INVALID_IDENTIFIER} { printf("Invalid identifier: %s at line %d\n", yytext, line_num); return INVALID; }
+
+[ \t]+  { /* Skip whitespace */ }
+"//".*  { /* Skip comments */ }
+\n { ++line_num; }
+
+. { printf("Unrecognized token: %s at line %d\n", yytext, line_num); exit(1); }
+
+%%

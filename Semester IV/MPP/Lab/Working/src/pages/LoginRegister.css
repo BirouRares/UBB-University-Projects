@@ -1,0 +1,44 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  height: 100vh;
+}
+
+.form {
+  background: #f9f9f9; 
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  width: 320px; /* Increased width for uniformity */
+}
+
+.input {
+  margin-bottom: 1.5rem; /* Increased margin for better spacing */
+  padding: 1.5rem; /* Increased padding for bigger input fields */
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 8px; /* Rounded border */
+  font-size: 1.2rem; /* Increased font size for better readability */
+  width: calc(100% - 3rem); /* Ensure input fields have the same width */
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+/* Button styling */
+.button {
+  padding: 1.5rem; /* Increased padding for bigger button */
+  border: none;
+  border-radius: 8px; /* Rounded border */
+  font-size: 1.2rem; /* Increased font size for better readability */
+  cursor: pointer;
+  background-color: #4caf50; /* Green color */
+  color: #fff; /* Text color */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  width: calc(100% - 3rem); /* Ensure button fills the width */
+  box-sizing: border-box; /* Include padding and border in the width */
+  margin-left: -38px;
+}
+
+/* Button hover effect */
+.button:hover {
+  background-color: #388e3c; /* Darker shade of green */
+}

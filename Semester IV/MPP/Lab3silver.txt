@@ -1,0 +1,2 @@
+silver: ofline suport, daca nu ai net, intra pe local si cand ai net inapoi incarca pe baza de date
+gold: 

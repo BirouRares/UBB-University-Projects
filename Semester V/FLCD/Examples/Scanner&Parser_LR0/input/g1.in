@@ -1,0 +1,13 @@
+
+E = $ ( ) + * int e #
+S = S
+P = {
+    S -> A B
+    A -> ( S ) 
+    A -> int C
+    B -> + S 
+    B -> e
+    C -> e
+    B -> + S
+    C -> * A
+}

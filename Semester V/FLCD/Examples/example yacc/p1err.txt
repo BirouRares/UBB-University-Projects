@@ -1,0 +1,25 @@
+report
+{
+    a: int
+    1b: int // a variable name should start with # or a letter
+    c: int
+
+    read(a)
+    read(1b)
+    read(c)
+
+    #smallest: int
+    #smallest = a
+
+    iff #smallest > 1b // if statement is spelled incorrectly
+    begin:
+        #smallest = 1b
+    end;
+
+    if #smallest > c
+    begin:
+        #smallest = c
+    end;
+
+    write(#smallest)
+}
